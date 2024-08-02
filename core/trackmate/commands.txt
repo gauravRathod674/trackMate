@@ -1,0 +1,12 @@
+----------------------------------------
+
+venv/Scripts/Activate.ps1
+cd core
+python manage.py runserver
+python manage.py migrate
+python manage.py makemigrations
+celery -A core worker --pool=solo -l info
+
+------------------------------------------
+
+not useful -> celery -A core beat -l info

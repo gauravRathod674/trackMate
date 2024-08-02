@@ -1,0 +1,21 @@
+{
+  "timestamp": 1706442302,
+  "data": [
+    {
+      "brand": "H&M",
+      "name": "Laptop case",
+      "price": "Rs.1,299.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/3e/1d/3e1dca45617f8402d4523c5ccae269c75fa45fec.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[3]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1104991003.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Laptop case",
+      "price": "Rs.1,499.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/b4/5f/b45f8dd7192945308d6062092b1dd97878ac47b3.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1181635002.html"
+    }
+  ]
+}

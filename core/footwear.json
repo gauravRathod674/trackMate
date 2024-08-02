@@ -1,0 +1,365 @@
+{
+  "timestamp": 1706627200,
+  "data": [
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Color Block Black Jogger Shoes",
+      "price": "\u20b9 1,999.00",
+      "image": "//www.westside.com/cdn/shop/files/300946957BLACK_1.jpg?v=1694697167&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-color-block-black-jogger-shoes-300946957?_pos=7&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Kids Lilac Mary Jane Shoes",
+      "price": "\u20b9 499.00",
+      "image": "//www.westside.com/cdn/shop/products/300928883PINK_1.jpg?v=1683206239&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-kids-lilac-mary-jane-shoes-300928883?_pos=12&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "GO RUN SUPERSONIC - APEX, BLACK/WHITE",
+      "price": "\u20b93,899.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw02f652a6/images/large/195969714379-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/go-run-supersonic---apex/246032-BKW.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX CUSHIONING HYPER CRAZE BO, NNNAVY",
+      "price": "\u20b98,399.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw81f6ee1d/images/large/196311925238-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-cushioning-hyper-craze-bo/220694-NVY.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX CUSHIONING ARCH FIT - MYR, NAVY/LAVENDER",
+      "price": "\u20b95,399.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw6f2e158a/images/large/196642235624-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-cushioning-arch-fit---myr/128307-NVLV.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX CUSHIONING ARCH FIT AIR-E, NNNAVY",
+      "price": "\u20b96,599.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw6d882597/images/large/196311978135-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-cushioning-arch-fit-air-e/220743-NVY.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "LUNA BLU Trim Court Black Pump Shoes",
+      "price": "\u20b9 1,699.00",
+      "image": "//www.westside.com/cdn/shop/files/300946484BLACK_1.jpg?v=1692358213&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/luna-blu-trim-court-black-pump-shoes-300946484?_pos=3&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Dark Tan Tex Lace Up Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300951928DARKTAN_1.jpg?v=1692447793&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-dark-tan-tex-lace-up-shoes-300951928?_pos=9&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX CUSHIONING LITE-LOVESTRUC, SAGE",
+      "price": "\u20b92,099.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dwca4b9ed1/images/large/196311217487-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-cushioning-lite-lovestruc/136729-SAGE.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "EQUALIZER 5, NAVY/ORANGE",
+      "price": "\u20b93,899.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw96c7a24e/images/large/196311559679-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/equalizer-5/232519-NVOR.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Grey Dino Printed T-Bar Shoes",
+      "price": "\u20b9 699.00",
+      "image": "//www.westside.com/cdn/shop/files/300946442TAUPE_1.jpg?v=1694171734&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-grey-dino-printed-t-bar-shoes-300946442?_pos=14&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Mustard Tiger Sock Shoes",
+      "price": "\u20b9 299.00",
+      "image": "//www.westside.com/cdn/shop/files/300946595MUSTARD_1.jpg?v=1692789612&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-mustard-tiger-sock-shoes-300946595?_pos=24&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX CUSHIONING ARCH FIT AIR-E, NNNAVY",
+      "price": "\u20b96,599.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw6d882597/images/large/196311978135-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-cushioning-arch-fit-air-e/220743-NVY.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "EQUALIZER 5, NAVY/ORANGE",
+      "price": "\u20b93,499.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw352728b7/images/large/196989026589-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/equalizer-5/232524-NVOR.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Navy Casual Shoes",
+      "price": "\u20b9 1,699.00",
+      "image": "//www.westside.com/cdn/shop/files/300966429NAVY_1.jpg?v=1706179805&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-navy-casual-shoes-300966429?_pos=16&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "H&M",
+      "name": "Trainers",
+      "price": "Rs.2,999.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/da/13/da13f1f94371e05bf2295444cba353a58213b2ab.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.0951820001.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Brown Casual Shoes",
+      "price": "\u20b9 1,699.00",
+      "image": "//www.westside.com/cdn/shop/files/300966428TAN_1.jpg?v=1706179785&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-brown-casual-shoes-300966428?_pos=22&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "LUNA BLU Ivory Mary Jane Sling Back Shoes",
+      "price": "\u20b9 1,399.00",
+      "image": "//www.westside.com/cdn/shop/files/300947877IVORY_1.jpg?v=1692167478&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/luna-blu-ivory-mary-jane-sling-back-shoes-300947877?_pos=5&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Black Formal Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300966435BLACK_1.jpg?v=1706169565&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-black-formal-shoes-300966435?_pos=15&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Coral Polka Dotted Shoes",
+      "price": "\u20b9 999.00",
+      "image": "//www.westside.com/cdn/shop/files/300946480CORAL_1.jpg?v=1696506439&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-coral-polka-dotted-shoes-300946480?_pos=19&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "GO RUN SUPERSONIC - APEX, BLACK/WHITE",
+      "price": "\u20b93,899.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw02f652a6/images/large/195969714379-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/go-run-supersonic---apex/246032-BKW.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "DELMONT - JENKO, CCHARCOAL",
+      "price": "\u20b95,999.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw9f0ba53a/images/large/194880003265-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/delmont---jenko/210225-CHAR.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Dark Tan Monk Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/products/300939002DARKTAN_1.jpg?v=1685622230&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-dark-tan-monk-shoes-300939002?_pos=4&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "GO WALK FLEX - OCEAN WIND, BBBBLACK",
+      "price": "\u20b93,849.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dwf9e78853/images/large/196311650314-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/go-walk-flex---ocean-wind/124955-BLK.html"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "ULTRA FLEX 3, WHITE/MULTI",
+      "price": "\u20b92,399.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw21bb643e/images/large/196642769518-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/ultra-flex-3/302242L-WMLT.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Multicolor Ditsy Floral Shoes",
+      "price": "\u20b9 999.00",
+      "image": "//www.westside.com/cdn/shop/files/300946479MULTI_1.jpg?v=1696506464&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-multicolor-ditsy-floral-shoes-300946479?_pos=18&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "H&M",
+      "name": "Derby shoes",
+      "price": "Rs.2,999.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/57/a0/57a0e38801ec8b0ebc3017b38eaac36fd79b95a4.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1036812001.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Warm-lined padded boots",
+      "price": "Rs.4,499.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/05/bd/05bdea7fad08e44bca5c5ade46d0161327439dc3.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1089309001.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Grey Casual Shoes",
+      "price": "\u20b9 1,699.00",
+      "image": "//www.westside.com/cdn/shop/files/300959059GREY_1.jpg?v=1698931423&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-grey-casual-shoes-300959059?_pos=23&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Multicolor Strap-On Shoes",
+      "price": "\u20b9 1,099.00",
+      "image": "//www.westside.com/cdn/shop/files/300963769WHITE_1.jpg?v=1706169564&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-multicolor-strap-on-shoes-300963769?_pos=17&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "GO WALK FLEX, NAVY/ORANGE",
+      "price": "\u20b93,599.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw52e53b7d/images/large/196311558795-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/go-walk-flex/216482-NVOR.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Imitation leather trainers",
+      "price": "Rs.2,299.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/08/11/0811c78b34412fadc7ee7657d0bb8875e438da28.jpg],origin[dam],category[men_shoes_sneakers],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1002745005.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "LUNA BLU Beige Sling Back Shoes",
+      "price": "\u20b9 1,199.00",
+      "image": "//www.westside.com/cdn/shop/products/300944744BEIGE_1.jpg?v=1687955474&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/luna-blu-beige-sling-back-shoes-300944744?_pos=1&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "MAX PROTECT SPORT - CAPRA, NNNAVY",
+      "price": "\u20b94,499.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dwf6890de4/images/large/196989153230-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/max-protect-sport---capra/232665-NVY.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Brown Double Band Monk Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300951935DARKTAN_1.jpg?v=1694697315&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-brown-double-band-monk-shoes-300951935?_pos=2&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Black Formal Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300966437BLACK_1.jpg?v=1706169547&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-black-formal-shoes-300966437?_pos=21&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "Yellow Coral Daisy Printed T-Bar Shoes",
+      "price": "\u20b9 699.00",
+      "image": "//www.westside.com/cdn/shop/files/300946443CORAL_1.jpg?v=1694171734&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/yellow-coral-daisy-printed-t-bar-shoes-300946443?_pos=13&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY White & Green Lace-up Color Jogger Shoes",
+      "price": "\u20b9 1,999.00",
+      "image": "//www.westside.com/cdn/shop/files/300945251WHITEGREEN_1.jpg?v=1691665650&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-white-green-lace-up-color-jogger-shoes-300945251?_pos=10&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "ARCH FIT, NNNAVY",
+      "price": "\u20b94,499.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dw72edf936/images/large/195204998397-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/arch-fit/232201-NVY.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Color Block Off White Jogger Shoes",
+      "price": "\u20b9 1,999.00",
+      "image": "//www.westside.com/cdn/shop/files/300946958OFFWHITE_1.jpg?v=1694697168&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-color-block-off-white-jogger-shoes-300946958?_pos=6&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Brown Formal Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300966434DARKTAN_1.jpg?v=1706169564&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-brown-formal-shoes-300966434?_pos=20&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "EQUALIZER 5, BLACK/WHITE",
+      "price": "\u20b93,899.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dwd34c91e6/images/large/196311604812-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/equalizer-5/232519-BKW.html"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "SOLEPLAY Beige Block Jogger Shoes",
+      "price": "\u20b9 1,999.00",
+      "image": "//www.westside.com/cdn/shop/files/300945252BEIGE_1.jpg?v=1691665650&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/soleplay-beige-block-jogger-shoes-300945252?_pos=8&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "WESTSIDE",
+      "name": "LUNA BLU Nude Cone Heeled Almond Toe Pump Shoes",
+      "price": "\u20b9 1,499.00",
+      "image": "//www.westside.com/cdn/shop/files/300955825NUDE_1.jpg?v=1697205586&width=533",
+      "source": "WESTSIDE",
+      "link": "https://www.westside.com/products/luna-blu-nude-cone-heeled-almond-toe-pump-shoes-300955825?_pos=11&_sid=6ccbeb909&_ss=r"
+    },
+    {
+      "brand": "SKECHERS",
+      "name": "GO WALK 6 - MOTLEY, NNNAVY",
+      "price": "\u20b93,599.00",
+      "image": "https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechers_india/default/dwaa5916f2/images/large/195204893364-1.jpg?sw=310&sfrm=jpg",
+      "source": "SKECHERS",
+      "link": "https://www.skechers.in/go-walk-6---motley/216208-NVY.html"
+    }
+  ]
+}

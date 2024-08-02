@@ -1,0 +1,192 @@
+{
+  "timestamp": 1706442281,
+  "data": [
+    {
+      "brand": "MSI",
+      "name": "Modern 14, Intel 12th Gen. i7-1255U, 36CM FHD 60Hz Laptop (16GB/512GB NVMe SSD/Windows 11 Home/Intel Iris Xe Graphics/Classic Black/1.4Kg), C12M-459IN",
+      "price": "\u20b954,990",
+      "ratings": "4.1 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "57",
+      "image": "https://m.media-amazon.com/images/I/61yN+3Z7WtL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/MSI-i7-1255U-Windows-Graphics-C12M-459IN/dp/B09YCX5F52/ref=sr_1_14?keywords=laptop&qid=1706442280&sr=8-14"
+    },
+    {
+      "brand": "Dell",
+      "name": "15 Laptop, Intel Core i5-1135G7 Processor/ 8GB/ 1TB+256GB SSD/15.6\"(39.5cm) FHD Display/Mobile Connect/Windows 11 + MSO'21/15 Month McAfee/Spill-Resistant Keyboard/Black/Thin & Light 1.69kg",
+      "price": "\u20b945,990",
+      "ratings": "3.5 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "541",
+      "image": "https://m.media-amazon.com/images/I/61TJSzvEsQL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/Dell-i5-1135G7-Processor-Spill-Resistant-Keyboard/dp/B0C2HVX9W9/ref=sr_1_5?keywords=laptop&qid=1706442280&sr=8-5"
+    },
+    {
+      "brand": "HP",
+      "name": "Chromebook X360 Intel Celeron N4120 14 inch(35.6 cm) Micro-Edge, Touchscreen, 2-in-1 Laptop (4GB RAM/64GB eMMC/Chrome OS/Intel UHD Graphics,1.49Kg), 14a-ca0506TU",
+      "price": "\u20b927,990",
+      "ratings": "3.9 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "361",
+      "image": "https://m.media-amazon.com/images/I/618lXcNS7VL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-Chromebook-Micro-Edge-Touchscreen-14a-ca0506TU/dp/B09QQPGDBG/ref=sr_1_6?keywords=laptop&qid=1706442280&sr=8-6"
+    },
+    {
+      "brand": "Acer",
+      "name": "Aspire Lite 12th Gen Intel Core i3-1215U Premium Metal Laptop (8GB RAM/512GB SSD/Windows 11 Home) AL15-52, 39.62cm (15.6\") Full HD Display, Metal Body, Steel Gray, 1.59 Kg",
+      "price": "\u20b931,990",
+      "ratings": "4.0 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "683",
+      "image": "https://m.media-amazon.com/images/I/71czGb00k5L._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/Acer-i3-1215U-Premium-Windows-AL15-52/dp/B0CKLN7PSZ/ref=sr_1_3?keywords=laptop&qid=1706442280&sr=8-3"
+    },
+    {
+      "brand": "Lenovo",
+      "name": "IdeaPad D330 Intel Celeron N4020 10.1\" (25cm) HD IPS Detachable 2-in-1 Laptop (4GB/128GB eMMC/Windows 10/1 Yr Warranty/Mineral Grey/1.1Kg), 82H0001YIN",
+      "price": "\u20b924,990",
+      "ratings": "3.8 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "634",
+      "image": "https://m.media-amazon.com/images/I/51gkDWHPvQL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/Lenovo-IdeaPad-Detachable-Warranty-82H0001YIN/dp/B09SV2B5SR/ref=sr_1_12?keywords=laptop&qid=1706442280&sr=8-12"
+    },
+    {
+      "brand": "ASUS",
+      "name": "Vivobook 14, Intel Core i3-1115G4 11th Gen, 14\" (35.56 cms) FHD, Thin and Light Laptop (8GB/512GB SSD/Windows 11/Office 2021/Transparent Silver/1.60 kg), X1400EA-EK322WS",
+      "price": "\u20b929,990",
+      "ratings": "4.0 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "101",
+      "image": "https://m.media-amazon.com/images/I/616TNXcZcHL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/ASUS-Vivobook-i3-1115G4-Transparent-X1400EA-EK322WS/dp/B0C3CNRQD1/ref=sr_1_10?keywords=laptop&qid=1706442280&sr=8-10"
+    },
+    {
+      "brand": "Dell",
+      "name": "15 Laptop, Intel Core i3-1115G4 Processor/8GB DDR4/512GB SSD/Intel UHD Graphics/15.6\" (39.6cm) FHD 120Hz Refresh, 250 nits/Mobile Connect/Win 11+MSO'21/15 Month McAfee/Black/Thin & Light-1.66kg",
+      "price": "\u20b936,990",
+      "ratings": "3.8 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "588",
+      "image": "https://m.media-amazon.com/images/I/51VjhwlkF9L._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/Dell-i3-1115G4-Processor-Graphics-Light-1-66kg/dp/B0CCSPWCQY/ref=sr_1_7?keywords=laptop&qid=1706442280&sr=8-7"
+    },
+    {
+      "brand": "HP",
+      "name": "Smartchoice 14s, 11th Gen Intel Core i3-1125G4, 8GB RAM/256GB SSD 14\"(35.6 cm) Micro-Edge, Anti-Glare, FHD/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/ MSO21/1.41 Kg, 14s-dy2507TU",
+      "price": "\u20b933,990",
+      "ratings": "4.1 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "1,524",
+      "image": "https://m.media-amazon.com/images/I/71TaT3nhcvL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-i3-1115G4-Micro-Edge-Anti-Glare-14s-dy2507TU/dp/B0B63Y75P9/ref=sr_1_15?keywords=laptop&qid=1706442280&sr=8-15"
+    },
+    {
+      "brand": "N/A",
+      "name": "[Windows 11 Home] HP 255 G8 Notebook, 15.6'' HD Display, AMD Athlon 3020e Processor, 8GB Memory, 256GB SSD, Wi-Fi, Bluetooth, Type-C Port, RJ-45 Port, Black",
+      "price": "\u20b922,950",
+      "ratings": "4.1 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "61",
+      "image": "https://m.media-amazon.com/images/I/91tJ0jQJ+cL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-255-G8-Processor-Bluetooth/dp/B0B6LCJ3FD/ref=sr_1_11?keywords=laptop&qid=1706442280&sr=8-11"
+    },
+    {
+      "brand": "HP",
+      "name": "Laptop 15s, 12th Gen Intel Core i3-1215U, 15.6-inch (39.6 cm), FHD, 8GB DDR4, 512GB SSD, Intel UHD Graphics, Backlit KB, Thin & Light, Dual Speakers (Win 11, MSO 2021, Silver, 1.69 kg), fq5007TU",
+      "price": "\u20b938,990",
+      "ratings": "4.1 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "2,207",
+      "image": "https://m.media-amazon.com/images/I/71JcuGuw4XL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-i3-1215U-15-6-inch-Graphics-Speakers/dp/B0BP2M7CCS/ref=sr_1_9?keywords=laptop&qid=1706442280&sr=8-9"
+    },
+    {
+      "brand": "N/A",
+      "name": "Chuwi HeroBook Pro 14.1'' Laptop, 8GB RAM 256GB SSD, Windows 11 Laptop, 1TB SSD Expand, Intel Celeron N4020(up to 2.8GHz), FHD IPS Display, Ultra Slim, Mini-HDMI, 5G WiFi, USB3.0, Webcam,TF Card",
+      "price": "\u20b917,990",
+      "ratings": "3.7 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "6,185",
+      "image": "https://m.media-amazon.com/images/I/61DsD89y5rL._AC_UL640_QL65_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.inhttps://aax-eu.amazon.in/x/c/RGf1jfg9BAte5PZ2pgZcpeIAAAGNT-LNAAMAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDEgICAz-iy4/https://www.amazon.in/dp/B0CP9TFVK4?pd_rd_i=B0CP9TFVK4&pf_rd_p=7d6d801d-0b91-42f0-9ded-a1900c21a285&pf_rd_r=632YKK162A4MH58W7SS0&pd_rd_wg=TNoLA&pd_rd_w=Ne99a&pd_rd_r=4127ac60-ee2b-4ed8-927c-327cd3c7eda5"
+    },
+    {
+      "brand": "ASUS",
+      "name": "VivoBook 15 (2021), 15.6-inch (39.62 cm) HD, Dual Core Intel Celeron N4020, Thin and Light Laptop (4GB RAM/256GB SSD/Integrated Graphics/Windows 11 Home/Transparent Silver/1.8 Kg), X515MA-BR011W",
+      "price": "\u20b919,990",
+      "ratings": "3.9 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "1,272",
+      "image": "https://m.media-amazon.com/images/I/71lYhcc++AL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/gp/bestsellers/computers/22963796031/ref=sr_bs_0_22963796031_1"
+    },
+    {
+      "brand": "Tecno",
+      "name": "MEGABOOK T1, Intel Core 11th Gen i3 Processor (8GB RAM/ 512GB SSD Storage), 15.6-Inch (39.62 CM) Eye Comfort disply, (14.8mm Ultra Slim/ 70 Wh Large Battery/Windows 11/ Space Grey / 1.56 Kg)",
+      "price": "\u20b923,990",
+      "ratings": "3.9 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "209",
+      "image": "https://m.media-amazon.com/images/I/61xY8U1KM5L._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/MEGABOOK-Processor-512GB-Storage-15-6-Inch/dp/B0CB4DS4CR/ref=sr_1_16?keywords=laptop&qid=1706442280&sr=8-16"
+    },
+    {
+      "brand": "Honor",
+      "name": "MagicBook X16 (2024), 12th Gen Intel Core i5-12450H, 16-inch (40.64 cm) FHD IPS Anti-Glare Thin and Light Laptop (16GB/512GB PCIe SSD/Windows 11/ Full-Size Numeric Keyboard /1.68Kg), Gray",
+      "price": "\u20b950,466",
+      "ratings": "4.1 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "253",
+      "image": "https://m.media-amazon.com/images/I/61aaFLxqFKL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/MagicBook-i5-12450H-Anti-Glare-Full-Size-Keyboard/dp/B0CRQB4HBP/ref=sr_1_4?keywords=laptop&qid=1706442280&sr=8-4"
+    },
+    {
+      "brand": "HP",
+      "name": "Laptop 15s, Intel Celeron, 15.6-inch (39.6 cm), HD, 8GB DDR4, 512GB SSD, Intel UHD Graphics, Thin & Light, Dual Speakers, BrightView Display (Win 11, MSO 2021, Silver, 1.65 kg), fq3071TU",
+      "price": "\u20b928,990",
+      "ratings": "3.2 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "162",
+      "image": "https://m.media-amazon.com/images/I/81GuRJraGlL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-15-6-inch-Graphics-Speakers-BrightView/dp/B0C3CLH1PV/ref=sr_1_13?keywords=laptop&qid=1706442280&sr=8-13"
+    },
+    {
+      "brand": "HP",
+      "name": "Victus Gaming Laptop, AMD Ryzen 7 7840HS AI Powered, 6GB RTX 3050 GPU, 16.1-inch (40.9 cm), 95W TGP, FHD, IPS, 144Hz, 300 nits, 16GB DDR5, 1TB SSD, RGB Backlit KB (MSO, Blue, 2.29 kg), s0094AX",
+      "price": "\u20b998,436",
+      "ratings": "4.3 out of 5 stars",
+      "numerical_rating": 5,
+      "no_of_ratings": "395",
+      "image": "https://m.media-amazon.com/images/I/71ckDfWKZ8L._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/HP-Powered-16-1-inch-Backlit-s0094AX/dp/B0CDG6TM66/ref=sr_1_2?keywords=laptop&qid=1706442280&sr=8-2"
+    },
+    {
+      "brand": "Chuwi",
+      "name": "HeroBook Pro 14.1'' Laptop, 8GB RAM 256GB SSD, Windows 11 Laptop, 1TB SSD Expand, Intel Celeron N4020(up to 2.8GHz), FHD IPS Display, Ultra Slim, Mini-HDMI, 5G WiFi, USB3.0, Webcam,TF Card",
+      "price": "\u20b917,990",
+      "ratings": "3.7 out of 5 stars",
+      "numerical_rating": 4,
+      "no_of_ratings": "6,185",
+      "image": "https://m.media-amazon.com/images/I/61DsD89y5rL._AC_UY218_.jpg",
+      "source": "AMAZON",
+      "link": "https://www.amazon.in/Chuwi-HeroBook-Pro-Windows-Mini-HDMI/dp/B0CP9TFVK4/ref=sr_1_8?keywords=laptop&qid=1706442280&sr=8-8"
+    }
+  ]
+}

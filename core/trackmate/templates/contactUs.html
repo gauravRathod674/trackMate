@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+<style>
+    body {
+        color: #fff;
+    }
+
+    .contact-us-container {
+        border: 1px solid #1d1d1d;
+        box-shadow: 0 0 40px #bb86fc;
+        padding: 2rem;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .field,
+    select , .field:focus  {
+        border: 1px solid purple;
+        border-radius: 10px;
+        padding: 12px 20px;
+        background-color: transparent;
+        color: #fff;
+        margin-bottom: 20px;
+        transition: border-color 1s ease-in-out;
+        outline: none;
+    }
+
+    
+    .field:hover {
+        border: 1px dashed purple !important;
+        /* border-color: purple !important; */
+        box-shadow: 0 0 5px purple;
+    }
+
+    
+    .field:focus {
+        background-color: transparent;
+        border-color: #ddd;
+        animation: borderHighlight 2s forwards; 
+        box-shadow: 0 0 5px purple; /* You can customize the box-shadow color and size */
+        color: #fff;
+    }
+
+    
+    .field:not(:focus) {
+        animation: borderReset 2s forwards;
+    }
+
+    @keyframes borderHighlight {
+      25% {
+        border-top-color: purple;
+        border-right-color: #ddd;
+        border-bottom-color: #ddd;
+        border-left-color: #ddd;
+      }
+      50% {
+        border-top-color: purple;
+        border-right-color: purple;
+        border-bottom-color: #ddd;
+        border-left-color: #ddd;
+      }
+      75% {
+        border-top-color: purple;
+        border-right-color: purple;
+        border-bottom-color: purple;
+        border-left-color: #ddd;
+      }
+      100% {
+        border-top-color: purple;
+        border-right-color: purple;
+        border-bottom-color: purple;
+        border-left-color: purple;
+      }
+    }
+
+    @keyframes borderReset {
+      25% {
+        border-top-color: purple;
+        border-right-color: purple;
+        border-bottom-color: purple;
+        border-left-color: #ddd;
+      }
+      50% {
+        border-top-color: purple;
+        border-right-color: purple;
+        border-bottom-color: #ddd;
+        border-left-color: #ddd;
+      }
+      75% {
+        border-top-color: purple;
+        border-right-color: #ddd;
+        border-bottom-color: #ddd;
+        border-left-color: #ddd;
+      }
+      100% {
+        border-top-color: #ddd;
+        border-right-color: #ddd;
+        border-bottom-color: #ddd;
+        border-left-color: #ddd;
+      }
+    }
+
+
+    .field::placeholder {
+        color: #fff;
+    }
+
+    .field-label {
+        position: relative;
+        left: 0.6rem;
+        font-weight: 600;
+        color: #bb86fc;
+    }
+
+    select {
+        width: 100%;
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 30px;
+        background: url('https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/svg/chevron-down-outline.svg') no-repeat;
+        background-position: right 20px center;
+        background-size: 20px;
+        cursor: pointer;
+    }
+
+    select,
+    select option {
+        background-color: #101010;
+        color: #fff;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        padding: 12px 20px;
+    }
+
+    select option:hover {
+        background-color: #bb86fc;
+        color: #fff;
+    }
+
+    .container contact-us-container {
+        max-width: 40%;
+        margin-top: 10rem;
+    }
+
+    .container contact-us-container h2 {
+        text-align: center;
+    }
+
+    .container contact-us-container form {
+        margin-top: 20px;
+    }
+
+    .row mb-3 {
+        margin-top: 20px;
+    }
+
+    .btn-attractive {
+        margin-top: 20px;
+        background-color: #bb86fc; /* Change the button background color */
+        transition: background-color 0.3s ease; /* Add transition effect */
+        padding: 10px 25px; /* Increase padding to make it bigger */
+        font-size: 18px; /* Increase font size */
+        display: block; /* Make it a block-level element */
+        margin: 0 auto; /* Center horizontally */
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .btn-attractive:hover {
+        background-color: #8a51cf; /* Change the button background color on hover */
+    }
+
+    /* Add animation keyframes */
+    @keyframes scaleUp {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Apply animation to the button on hover */
+    .btn-attractive:hover {
+        animation: scaleUp 0.5s ease-in-out;
+    }
+
+    
+</style>
+
+<div class="container contact-us-container" style="max-width: 40%; margin-top: 10rem;">
+    <h2 class="text-center" style="font-weight: 600;">Contact Us</h2>
+    <form id="contactForm" method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="subject" class="form-label field-label">Subject</label>
+            <select class="form-select field" id="subject" required name="subject">
+                <option value="" disabled selected>Select a subject</option>
+                <option value="feature_request">Feature Request</option>
+                <option value="account_support">Account Support</option>
+                <option value="partnership_inquiry">Partnership Inquiry</option>
+                <option value="data_accuracy_issue">Data Accuracy Issue</option>
+                <option value="user_experience_feedback">User Experience Feedback</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="firstName" class="form-label field-label">First Name</label>
+                <input type="text" class="form-control field" id="firstName" placeholder="Track" required name="first_name">
+            </div>
+            <div class="col">
+                <label for="lastName" class="form-label field-label">Last Name</label>
+                <input type="text" class="form-control field" id="lastName" placeholder="Mate" required name="last_name">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label field-label">Your Email</label>
+            <input type="email" class="form-control field" id="email" placeholder="trackmate.official@gmail.com" required name="email">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label field-label">Message</label>
+            <textarea class="form-control field" id="message" rows="4" required name="message"
+                placeholder="Write message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-attractive" id="submitBtnn">Submit</button>
+    </form>
+</div>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" id="contactUsSuccessAlert" style="position: fixed; top: 10px; right: 35%; display: none;z-index: 10000;">
+    <strong>Your message has been sended successfully! 🚀</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<script type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script>
+        $(document).ready(function(){
+            $(document).on('submit', 'form#contactForm', function (e) {
+                e.preventDefault(); // Prevent the default form submission
+    
+                // Store reference to the form that was submitted
+                var form = $(this);
+    
+                // Proceed with the AJAX request to submit the form data
+                const formData = new FormData(form[0]);
+    
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        // Handle success response
+                        console.log('Success:', data);
+    
+                        $('#contactUsSuccessAlert').fadeIn('slow', function () {
+                            $(this).delay(3000).fadeOut('slow');
+                        });
+    
+                        // Reset the form fields when the form is submitted
+                        form.trigger('reset');
+                    },
+                    error: function (error) {
+                        // Handle error response if needed
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+    
+{% endblock %}

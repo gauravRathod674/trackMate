@@ -1,0 +1,2739 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TrackMate</title>
+    <link rel="icon" href="{% static 'trackmate/images/Title_Logo11-modified.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300&family=Roboto+Mono:ital@1&family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'trackmate/css/style.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;1,100&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+
+    <!-- Tether CSS (optional, required for Bootstrap 4 tooltip and popover) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/css/tether.min.css"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   <style>  
+   * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "Open Sans", sans-serif; */
+        font-family: 'Raleway', sans-serif;
+    }
+
+    body {
+        background:#101010;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative; 
+        overflow-x: hidden;
+    }     
+
+    .title-logo {
+        height: 30px;
+        width: 30px;
+        background-image: url("{% static 'trackmate/images/trackmate_logo.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        vertical-align: middle; 
+    }
+
+    .explore {
+        color: white;
+    }
+
+    /* sidebar */
+    body,
+html { height: 100%;}
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {background-color: transparent;}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#sidebar-wrapper {
+    z-index: 10000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: black;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: black;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+.sidebar-nav li:hover{
+  background:  #bb86fc !important;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.sidebar-header {
+    text-align: left;
+    font-size: 20px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+.sidebar-brand {
+    height: 115px;
+    position: relative;
+    /* background:#212531; */
+    background: linear-gradient(to top, rgba(0,0,0,0.1)  ,rgba(255,255,255,0.1));
+   padding-top: 1em;
+   border-bottom: 1.5px solid rgba(255, 255, 255, 0.1) ;
+}
+.sidebar-brand a {
+    color: #ddd;
+}
+
+.sidebar-brand a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.dropdown-header {
+    text-align: left;
+    font-size: 1em;
+    color: #ddd;
+    background:black;
+    background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
+}
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: black;
+    box-shadow: none;
+}
+.dropdown-menu.show {
+    top: 0;
+}
+/*Fontawesome icons*/
+.nav.sidebar-nav li a::before {
+    font-family: fontawesome;
+    content: "";
+    vertical-align: baseline;
+    display: inline-block;
+    padding-right: 5px;
+} 
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+.hamburger { 
+  z-index: 999;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 16px;
+  text-align: left;
+  opacity: 0;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+  transition: transform .35s ease-in-out; /* Modify the transition duration for closing */
+  -webkit-transition: -webkit-transform .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: inline-block;
+  transform: translate3d(-100px,0,0);
+  -webkit-transform: translate3d(-100px,0,0);
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 30px;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: white;
+}
+.hamburger.is-closed .hamb-top { 
+  top: 15px; 
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 15px;  
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: white;
+  position: absolute;
+  left: 11.5rem;
+  height: 4px;
+  width: 30px;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px; 
+  margin-left: 1rem; 
+}
+.hamburger.is-open .hamb-top { 
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: transform .2s cubic-bezier(.73,1,.28,.08);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transition: transform .2s cubic-bezier(.73,1,.28,.08);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: inline-block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 5px;
+  text-align: left;
+  opacity: 0;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: inline-block;
+  transform: translate3d(-100px,0,0);
+  -webkit-transform: translate3d(-100px,0,0);
+  transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+}
+
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.firstnavbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    z-index: 1000;
+}
+
+
+/* Second Navbar */
+
+.secondNavbar {
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    position: fixed;
+    top:3.5rem;
+    left: 0;
+    right: 0;
+    background: #0E0E0E; 
+    z-index: 1000;
+}
+
+.secondNavbar .hamburger-btn {
+    display: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.secondNavbar .logo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.secondNavbar .logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.secondNavbar .logo h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.7rem;
+
+}
+
+.secondNavbar .links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
+}
+
+.secondNavbar .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+.secondNavbar .links a {
+    display: flex;
+    align-items: center;
+    /* Align icon and text vertically centered */
+    gap: 10px;
+    /* Adjust the gap between icon and text */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+
+.secondNavbar .links a:hover {
+    color:  #bb86fc;
+}
+
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 720px;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -70%);
+}
+
+.show-popup .form-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+
+.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form-popup .form-box {
+    display: flex;
+}
+
+@media (max-width: 950px) {
+    .secondNavbar :is(.hamburger-btn, .close-btn) {
+        display: block;
+    }
+
+    .secondNavbar {
+        padding: 15px 0;
+    }
+
+    .secondNavbar .logo img {
+        display: none;
+    }
+
+    .secondNavbar .logo h2 {
+        font-size: 1.4rem;
+    }
+
+    .secondNavbar .links {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        left: -100%;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+        background: black;
+        transition: 0.2s ease;
+    }
+
+    .secondNavbar .links.show-menu {
+        left: 0;
+    }
+
+    .secondNavbar .links a {
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .secondNavbar .links li:hover {
+        color: #fff;
+        background-color: #bb86fc;
+    }
+}
+
+@media (max-width: 760px) {
+    .form-popup {
+        width: 95%;
+    }
+}
+
+.secondNavbar ul li {
+    margin-top: 1rem;
+}
+
+    .category {
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    } 
+        .login {
+            color:white;
+        }          
+        
+        .login:hover {
+            color: #bb86fc;
+        }
+
+        .login:active {
+            color: #bb86fc;
+        }
+
+        /* Product Detail card */
+        .card {
+            background-color: rgba(0, 0, 0, 0.1);
+            border:  2px solid #bb86fc; 
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-radius:20px;
+            color: #6b6b6b;
+            box-shadow: 0 0 10px #bb86fc;
+        }
+
+        @media (min-width: 992px) {
+            .card {
+                position: relative;
+                left: 4rem;
+                width: 90%;
+            }
+
+        }
+
+        @media (min-width: 1200px) {
+            .buttons-div {
+                position: relative;
+                left: 3rem;
+            }
+        }
+        @media (max-width: 992px) {
+            .card {
+                background-color: #1d1d1d; 
+                border:  2px solid #bb86fc; 
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                border-radius:20px;
+                color: #6b6b6b;
+                box-shadow: 0 0 10px #bb86fc;
+            }
+
+            .buy-now-btn,.alert-now-btn,.addToWishlist {
+                position: relative;
+                left: 4rem;
+            }
+
+            .wishlist-div {
+                position: relative;
+                left: 0;
+                right: 0;
+                width: 150px;
+            }
+        }
+
+        .card img {
+            padding:5px;
+            max-height: 200px; /* Set max height for the image */
+            object-fit: contain; /* Contain the image within the container */
+        }
+
+        .card-body {
+            padding: 20px; 
+            flex-grow: 1; /* Make the card-body take up available space */
+        }
+
+        .card-title,
+        .card-text {
+            color:  #ffffff; /
+        }
+
+        .buy-now-btn, .alert-now-btn,.addToWishlist {
+            background-color: #bb86fc; 
+            color: #ffffff; 
+            border: 1px solid #bb86fc; 
+            border-radius: 7px;
+            padding: 8px 12px;
+            text-decoration: none; 
+            display: inline-block; 
+            transition: background-color 0.3s ease;
+        }
+
+        .alert-now-btn {
+            background-color: #bb86fc;
+            border: 1px solid #bb86fc; 
+        }
+
+        .addToWishlist {
+            background-color: #bb86fc;
+            border: 1px solid #bb86fc; 
+        }
+        .buy-now-btn:hover , .alert-now-btn:hover,.addToWishlist:hover{
+            background-color: #8a51cf;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #8a51cf; 
+        }
+
+        .buy-now-btn:active , .alert-now-btn:active,.addToWishlist:active {
+            background-color:#8a51cf ;
+        }
+ 
+        body.modal-open #blur ,body.modal-open #blurred{
+            filter: blur(10px);
+            pointer-events: none;
+            user-select: none;
+        }
+        
+
+        .modal {
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            width: 30%;
+            transform: translate(-50%, -50%);
+        }   
+        .bs-example {
+            font-family: sans-serif;
+            position: relative;
+            margin: 100px;
+        }
+     
+.typeahead, .tt-query, .tt-hint {
+    position: relative; 
+    border: 2px solid #CCCCCC;
+    border-radius: 20px;
+    font-size: 22px;
+    height: 32px;
+    line-height: 30px;
+    outline: medium none;
+    padding: 8px 12px;
+    width: 450px;
+    z-index: 2000;
+}
+
+.typeahead {
+    background-color: black;
+}
+
+.typeahead:focus {
+    border: 2px solid #bb86fc;
+}
+
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.tt-hint {
+    color: #ffffff;
+}
+
+.tt-menu {
+    background-color:black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 450px;
+    color: white;
+}
+
+.tt-suggestion {
+    position: relative;
+    font-size: 22px;
+    padding: 3px 20px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    background-color:#bb86fc;
+    color: #FFFFFF;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    /* Adjustments for medium screens */
+    .container-fluid {
+        position: relative;
+        bottom: 2rem;
+    }
+    .typeahead, .tt-query, .tt-hint {
+        width: 300px;
+    }
+    .tt-menu {
+        width: 300px;
+    }
+}
+
+@media (max-width: 788px) {
+    /* Adjustments for small screens */
+    .typeahead, .tt-query, .tt-hint {
+        width: 200px;
+    }
+    .tt-menu {
+        width: 200px;
+    }
+    /* Additional adjustments for small screens */
+    .firstnavbar {
+        height: auto; /* Adjust height as needed */
+    }
+}
+
+@media (max-width: 689px) {
+    /* Adjustments for extra small screens */
+    .trackmate-logo {
+        width: 100px;
+    }
+    .w-60 {
+        position: relative;
+        right: 14rem; /* Adjust positioning as needed */
+    }
+    .w-20:nth-child(2) {
+        position: relative;
+        bottom: 3rem; /* Adjust positioning as needed */
+        left: 10rem; /* Adjust positioning as needed */
+    }
+}
+
+
+@media (max-width: 688px) {
+    /* Adjustments for smaller screens */
+    .w-60 {
+        right: 0; /* Reset positioning */
+    }
+    .w-20:nth-child(2) {
+        bottom: 0; /* Reset positioning */
+        left: 0; /* Reset positioning */
+    }
+}
+
+@media (max-width: 618px) {
+    /* Adjustments for even smaller screens */
+    .trackmate-logo {
+        width: 80px; /* Adjust logo size */
+    }
+  
+    .w-20:nth-child(2) {
+        position: static; /* Reset positioning */
+    }
+}
+
+@media (max-width: 592px) {
+    /* Adjustments for screens smaller than or equal to 592px */
+    .w-60 {
+        right: 0; /* Reset positioning */
+    }
+    .w-20:nth-child(2) {
+        bottom: 1rem; /* Adjust positioning as needed */
+        left: 1rem; /* Adjust positioning as needed */
+    }
+    
+    /* Hide the "Hiieee, username" text */
+    .firstnavbar .w-20 span {
+        display: none;
+    }
+}
+        .hidden {
+            display: none;
+        }
+ 
+
+#blur , #blurred {
+    margin-top: 8.5rem;
+}
+
+
+.site-container {
+      max-width: 400px;
+      max-height:700px ;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 2px solid #bb86fc;
+      color: #ffffff;
+      box-shadow: 0 0 10px #bb86fc;
+      border-radius: 20px;
+      position: sticky;
+      top: 12rem; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .site-label {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      margin-bottom: 15px;
+      text-align: center;
+      margin-left: 15px;
+      color: #fff;
+    }
+  
+    .custom-checkbox {
+      margin-bottom: 15px;
+      width: 90%;
+      text-align: center;
+    }
+  
+    .custom-checkbox input {
+      margin-right: 5px;
+      display: none;
+    }
+  
+    .custom-checkbox label {
+      display: block;
+      margin-left: 20px;
+      padding: 7px;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    .custom-checkbox label:hover {
+        border: 1px solid #bb86fc;
+        box-shadow: 0 0 5px #bb86fc;
+        color:#bb86fc;
+    }
+  
+    .custom-checkbox input:checked + label {
+      color: #fff;
+      background-color: #bb86fc;
+      box-shadow: 0 0 5px #bb86fc;
+    }
+
+    .applyBtn:hover {
+        box-shadow: 0 0 5px #157347;
+    }
+  
+    @media (max-width: 767px) {
+      .custom-checkbox {
+        display: block;
+      }
+    }
+
+    @media (min-width: 770px) and (max-width: 992px) {
+      .col-md-1,
+      .col-md-2,
+      .col-md-3,
+      .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+  
+      .buttons-div {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 -4px;
+      }
+  
+      .buy-now-div,
+      .set-alert-div,
+      .wishlist-div {
+        flex-basis: calc(33.33% - 8px);
+        min-width: 100px;
+      }
+  
+      .button-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        height: 60px; 
+      }
+    }
+  
+     @media (max-width: 532px) {
+      .buy-now-btn img,
+      .alert-now-btn img,
+      .addToWishlist img {
+        display: none;
+      }
+    }
+    @media (max-width: 769px) {
+      .buttons-div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 -4px;
+      }
+  
+      .buy-now-div,
+      .set-alert-div,
+      .wishlist-div {
+        flex-basis: calc(33.33% - 8px);
+        min-width: 100px;
+      }
+  
+      .button-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        height: 60px; /* Set the desired height for buttons */
+      }
+  
+      .col-md-1, .col-md-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  
+    @media (min-width: 770px) {
+      .buttons-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+      }
+  
+      .button-container {
+        flex: 0 0 30%;
+        height: auto; /* Reset height for larger screens */
+      }
+  
+      .buy-now-div,
+      .set-alert-div,
+      .wishlist-div {
+        min-width: 100px; /* Adjust the min-width as needed */
+      }
+    }   
+    @media (min-width: 993px) {
+      .buttons-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+      }
+  
+      .button-container {
+        flex: 0 0 30%;
+        height: auto; /* Reset height for larger screens */
+      }
+  
+      .buy-now-div,
+      .set-alert-div,
+      .wishlist-div {
+        min-width: 100px; /* Adjust the min-width as needed */
+      }
+    }   
+    .site-column {
+      width: 20%;
+    }
+
+    .product-column {
+      width: 80%;
+    }
+
+    /* footer */
+    footer {
+        margin-top: 3rem;
+    }
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-inner:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.social-inner .tooltip {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-inner span {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.rights {
+    margin-top: 20px;
+}
+
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add specific styles for each social icon */
+.social-inner.facebook:hover,
+.social-inner.facebook:hover .tooltip,
+.social-inner.facebook:hover .tooltip::before {
+    background: #3B5999;
+}
+
+.social-inner.twitter:hover,
+.social-inner.twitter:hover .tooltip,
+.social-inner.twitter:hover .tooltip::before {
+    background: rgb(23, 23, 23);
+}
+
+.social-inner.instagram:hover,
+.social-inner.instagram:hover .tooltip,
+.social-inner.instagram:hover .tooltip::before {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.social-inner.github:hover,
+.social-inner.github:hover .tooltip,
+.social-inner.github:hover .tooltip::before {
+    background: linear-gradient(150deg, blue, purple);
+}
+
+.contact-list dd {
+    margin-left:3rem  ;
+}
+
+.nav-list li a, .contact-list dd a {
+    text-decoration: none;
+}
+.nav-list li a:hover,.contact-list dd a:hover {
+    text-decoration: underline;
+    color:#bb86fc ;
+}
+
+.nav-list li a span {
+    margin-left: 8px;
+}
+
+#loadMoreBtn {
+  width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #bb86fc;
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+#loadMoreBtn:hover {
+  background-color: #8a51cf;
+  border: 1px solid #8a51cf;
+  text-decoration: none;
+}
+
+/* Card animations */
+.animatable {
+            /* initially hide animatable objects */
+            visibility: hidden;
+
+            /* initially pause animatable objects their animations */
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -ms-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        /* show objects being animated */
+        .animated {
+            visibility: visible;
+
+            -webkit-animation-fill-mode: both;
+            -moz-animation-fill-mode: both;
+            -ms-animation-fill-mode: both;
+            -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-duration: 2s;
+            -moz-animation-duration: 2s;
+            -ms-animation-duration: 2s;
+            -o-animation-duration: 2s;
+            animation-duration: 2s;
+
+            -webkit-animation-play-state: running;
+            -moz-animation-play-state: running;
+            -ms-animation-play-state: running;
+            -o-animation-play-state: running;
+            animation-play-state: running;
+        }
+
+        /* CSS Animations (extracted from http://glifo.uiparade.com/) */
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+
+        @-moz-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -moz-transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+
+        @-o-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -o-transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(-2000px);
+            }
+
+            60% {
+                -webkit-transform: translateX(20px);
+            }
+
+            80% {
+                -webkit-transform: translateX(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+            }
+        }
+
+        @-moz-keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                -moz-transform: translateX(-2000px);
+            }
+
+            60% {
+                -moz-transform: translateX(20px);
+            }
+
+            80% {
+                -moz-transform: translateX(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateX(0);
+            }
+        }
+
+        @-o-keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                -o-transform: translateX(-2000px);
+            }
+
+            60% {
+                opacity: 1;
+                -o-transform: translateX(20px);
+            }
+
+            80% {
+                -o-transform: translateX(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-2000px);
+            }
+
+            60% {
+                transform: translateX(20px);
+            }
+
+            80% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @-webkit-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(2000px);
+            }
+
+            60% {
+                -webkit-transform: translateX(-20px);
+            }
+
+            80% {
+                -webkit-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+            }
+        }
+
+        @-moz-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -moz-transform: translateX(2000px);
+            }
+
+            60% {
+                -moz-transform: translateX(-20px);
+            }
+
+            80% {
+                -moz-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateX(0);
+            }
+        }
+
+        @-o-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -o-transform: translateX(2000px);
+            }
+
+            60% {
+                -o-transform: translateX(-20px);
+            }
+
+            80% {
+                -o-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(2000px);
+            }
+
+            60% {
+                transform: translateX(-20px);
+            }
+
+            80% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @-webkit-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+
+        @-moz-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -moz-transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+
+        @-o-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -o-transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @-webkit-keyframes bounceIn {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(.3);
+            }
+
+            50% {
+                -webkit-transform: scale(1.05);
+            }
+
+            70% {
+                -webkit-transform: scale(.9);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @-moz-keyframes bounceIn {
+            0% {
+                opacity: 0;
+                -moz-transform: scale(.3);
+            }
+
+            50% {
+                -moz-transform: scale(1.05);
+            }
+
+            70% {
+                -moz-transform: scale(.9);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: scale(1);
+            }
+        }
+
+        @-o-keyframes bounceIn {
+            0% {
+                opacity: 0;
+                -o-transform: scale(.3);
+            }
+
+            50% {
+                -o-transform: scale(1.05);
+            }
+
+            70% {
+                -o-transform: scale(.9);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes moveUp {
+            0% {
+                opacity: 1;
+                -webkit-transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+
+        @-moz-keyframes moveUp {
+            0% {
+                opacity: 1;
+                -moz-transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+
+        @-o-keyframes moveUp {
+            0% {
+                opacity: 1;
+                -o-transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateY(0);
+            }
+        }
+
+        @keyframes moveUp {
+            0% {
+                opacity: 1;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @-webkit-keyframes fadeBgColor {
+            0% {
+                background: none;
+            }
+
+            70% {
+                background: none;
+            }
+
+            100% {
+                background: #464646;
+            }
+        }
+
+        @-o-keyframes fadeBgColor {
+            0% {
+                background: none;
+            }
+
+            70% {
+                background: none;
+            }
+
+            100% {
+                background: #464646;
+            }
+        }
+
+        @keyframes fadeBgColor {
+            0% {
+                background: none;
+            }
+
+            70% {
+                background: none;
+            }
+
+            100% {
+                background: #464646;
+            }
+        }
+
+        .animated.animationDelay {
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s;
+        }
+
+        .animated.animationDelayMed {
+            animation-delay: 1.2s;
+            -webkit-animation-delay: 1.2s;
+        }
+
+        .animated.animationDelayLong {
+            animation-delay: 1.6s;
+            -webkit-animation-delay: 1.6s;
+        }
+
+        .animated.fadeBgColor {
+            -webkit-animation-name: fadeBgColor;
+            -moz-animation-name: fadeBgColor;
+            -o-animation-name: fadeBgColor;
+            animation-name: fadeBgColor;
+        }
+
+        .animated.bounceIn {
+            -webkit-animation-name: bounceIn;
+            -moz-animation-name: bounceIn;
+            -o-animation-name: bounceIn;
+            animation-name: bounceIn;
+        }
+
+        .animated.bounceInRight {
+            -webkit-animation-name: bounceInRight;
+            -moz-animation-name: bounceInRight;
+            -o-animation-name: bounceInRight;
+            animation-name: bounceInRight;
+        }
+
+        .animated.bounceInLeft {
+            -webkit-animation-name: bounceInLeft;
+            -moz-animation-name: bounceInLeft;
+            -o-animation-name: bounceInLeft;
+            animation-name: bounceInLeft;
+        }
+
+        .animated.fadeIn {
+            -webkit-animation-name: fadeIn;
+            -moz-animation-name: fadeIn;
+            -o-animation-name: fadeIn;
+            animation-name: fadeIn;
+        }
+
+        .animated.fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            -moz-animation-name: fadeInDown;
+            -o-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+        }
+
+        .animated.fadeInUp {
+            -webkit-animation-name: fadeInUp;
+            -moz-animation-name: fadeInUp;
+            -o-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+        }
+
+        .animated.moveUp {
+            -webkit-animation-name: moveUp;
+            -moz-animation-name: moveUp;
+            -o-animation-name: moveUp;
+            animation-name: moveUp;
+        }
+
+        .search-input{
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #101010;
+            z-index: -1;
+        }
+
+        .search-input:hover {
+            border: 1px dashed  #bb86fc !important;
+            /* border-color: #bb86fc !important; */
+            box-shadow: 0 0 5px #bb86fc;
+        }
+
+        .search-input:focus {
+            border: 1px solid #bb86fc !important;;
+            background-color: transparent;
+            border-color: #bb86fc;
+            animation: borderHighlight 2s forwards; 
+            box-shadow: 0 0 5px #bb86fc;
+            color: #fff;
+        }
+
+        .searchSubmitBtn {
+            position: relative;
+            right: 0.5rem;
+            font-size: 0.8rem;
+            background-color:  #bb86fc;
+            color:#fff;
+            transition: background 0.5s ;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .searchSubmitBtn:hover {
+            color: #fff;
+            background: #bb86fc;
+            border: 1px solid #bb86fc;
+            box-shadow: 0 0 5px #bb86fc;
+        }
+
+        ::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background:linear-gradient(transparent, #bb86fc);
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            border: 1px solid #bb86fc;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: black;
+            border-radius: 20px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body> 
+    <div id="particles-js"></div>
+ 
+
+    <div id="wrapper">
+        <div class="overlay"></div> 
+             <!-- Sidebar -->
+             <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+                <ul class="nav sidebar-nav">
+                  <div class="sidebar-header">
+                  <div class="sidebar-brand" style="text-align: center;">
+                    {% if profile.profile_photo %}
+                        <img src="{{ profile.profile_photo.url }}" class="mr-2" alt="Profile Photo" height="80px" width="80px" style="border-radius: 50%;">
+                    {% else %}
+                        <img src="{% static 'trackmate/images/profile_photo.png' %}" alt="User Icon" width="80px" height="80px" class="mr-2">
+                    {% endif %}
+                  </div>
+                  <li>
+                    <a href="/homepage/">
+                        <img src="{% static 'trackmate/images/homepage.png' %}" alt="Home Icon" width="25px" height="25px" class="mr-1 mb-1">
+                    Home
+                    </a>
+                </li>
+
+                  {% if user.is_authenticated %}
+                    <li>
+                        <a href="/userProfile/">
+                            <img src="{% static 'trackmate/images/user-profile.png' %}" alt="User Profile Icon" width="25px" height="25px" class="mr-1 mb-1">
+                            User Profile
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/login/">
+                            <img src="{% static 'trackmate/images/login.png' %}" alt="Login Icon" width="25px" height="25px" class="mr-1 mb-1">
+                            Log In
+                        </a>
+                    </li>
+                  {% endif %}
+                  
+                  {% if user.is_authenticated %}
+                  <li>
+                    <a href="/recentSearch/">
+                        <img src="{% static 'trackmate/images/recent-search.png' %}" alt="Recent Search Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Recent Search
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/wishlist/">
+                        <img src="{% static 'trackmate/images/bookmark-after.png' %}" alt="Wishlist Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Wishlist
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/alertlist/">
+                        <img src="{% static 'trackmate/images/bell-after.png' %}" alt="Alert Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Check Alert
+                    </a>
+                </li>
+                {% endif %}
+                  <!-- <li class="dropdown">
+                  <a href="#works" class="dropdown-toggle"  data-toggle="dropdown"><img src="{% static 'trackmate/images/explore.png' %}" alt="Explore Icon" width="25px" height="25px" class="ml-2 mb-1"><span class="ml-2">Explore</span> </a> -->
+                <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                 <li>
+                    <a href="/mobile/">
+                        <img src="{% static 'trackmate/images/phone.png' %}" alt="Mobile Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Mobile
+                    </a>
+                </li>
+                 <li>
+                    <a href="/laptop/">
+                        <img src="{% static 'trackmate/images/laptop.png' %}" alt="Laptop Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Laptop
+                    </a>
+                </li>
+                 <li>
+                    <a href="/audio/">
+                        <img src="{% static 'trackmate/images/headphones.png' %}" alt="Audio Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Audio
+                    </a>
+                </li>
+                 <li>
+                    <a href="/books/">
+                        <img src="{% static 'trackmate/images/books.png' %}" alt="Book Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Books
+                    </a>
+                </li>
+                 <li>
+                    <a href="/clothes/">
+                        <img src="{% static 'trackmate/images/clothes.png' %}" alt="Clothes Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Clothes
+                    </a>
+                </li>
+                 <li>
+                    <a href="/petFood/">
+                        <img src="{% static 'trackmate/images/dog-food.png' %}" alt="Pet Food Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Pet Food
+                    </a>
+                </li>
+                 <li>
+                    <a href="/watches/">
+                        <img src="{% static 'trackmate/images/watch.png' %}" alt="Watch Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Watches
+                    </a>
+                </li>
+                 <li>
+                    <a href="/footwear/">
+                        <img src="{% static 'trackmate/images/footwear.png' %}" alt="Footwear Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Footwear
+                    </a>
+                </li>
+                 <li>
+                    <a href="/camera/">
+                        <img src="{% static 'trackmate/images/camera.png' %}" alt="Camera Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Camera
+                    </a>
+                </li>
+                 </ul>
+                 </li>
+                 <li>
+                    <a href="/about/">
+                        <img src="{% static 'trackmate/images/aboutus.png' %}" alt="About Us Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        About Us  
+                    </a>
+                </li>
+                 <li>
+                    <a href="/contact/">
+                        <img src="{% static 'trackmate/images/contact-us.png' %}" alt="Contact Us Icon" width="25px" height="25px" class="mr-1 mb-1">
+                        Contact Us
+                    </a>
+                </li>
+                 {% if user.is_authenticated %}
+                    <li>
+                        <a href="/logout/">
+                            <img src="{% static 'trackmate/images/logout.png' %}" alt="Log Out Icon" width="25px" height="25px" class="mr-1 mb-1">
+                            Log Out
+                        </a>
+                    </li>
+                 {% endif %}
+                 </ul>
+             </nav>
+
+        <div id="page-content-wrapper">    
+            <nav class="navbar navbar-expand-lg bg-black p-0 small firstnavbar" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <div class="w-20">
+                        <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                            <span class="hamb-top"></span>
+                            <span class="hamb-middle"></span>
+                            <span class="hamb-bottom"></span>
+                        </button>
+                        <a class="navbar-brand" href="/homepage/">
+                            <img src="{% static 'trackmate/images/trackmate_logo.jpg' %}" height="130px" width="170px" alt="Logo" class="mr-2 trackmate-logo">
+                        </a>
+                    </div>
+                    
+                    <!--                     
+                        <a class="navbar-brand" href="#">
+                            <label for="search-box">
+                                <img src="{% static 'trackmate/images/quick_search.png' %}"  height="30px" width="300px" alt="Logo" class="mr-2" >
+                            </label>
+                        </a>
+                    -->
+                    
+                    <div class="w-60">
+                        <form class="d-flex w-50" role="search" method="POST" action="{% url 'search' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input class="form-control me-2 flex-grow-1 p-1 typeahead tt-query search-input" type="search" placeholder="Enter Product Name" aria-label="Search" style="font-size: 0.8rem; letter-spacing: 1.5px; text-indent: 15px;" name="product_name" autocomplete="off" spellcheck="false" required id="search-box">
+    
+                            <button type="submit" class="btn searchSubmitBtn" value="Search">
+                                <span class="bi bi-search"></span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="w-20">
+                        {% if user.is_authenticated %}
+                        <a href="/userProfile/" class="user-icon ml-3 mt-1">
+                            {% if profile %}
+                                {% if profile.profile_photo %}
+                                    <img src="{{ profile.profile_photo.url }}" class="img mr-2" alt="Profile Photo" height="30px" width="30px" style="border-radius: 50%;">
+                                {% else %}
+                                    <img src="{% static 'trackmate/images/profile_photo.png' %}" alt="User Icon" width="30" height="30" class="mr-2">
+                                {% endif %}
+                            {% else %}
+                                <!-- Handle the case when the profile object doesn't exist -->
+                                <img src="{% static 'trackmate/images/profile_photo.png' %}" alt="User Icon" width="30" height="30" class="mr-2">
+                            {% endif %}
+                        </a>
+                        
+                            <span style="color: white;">Hiieee,{{user.username}}</span>
+                            <a href="/logout/" class="log-out-icon ml-3 mt-1">
+                                <img src="{% static 'trackmate/images/log-out.png' %}" alt="Log Out" width="30" height="30">
+                            </a>
+                        {% else %}
+                            <!-- Display the Login/Register button if the user is not authenticated -->
+                            <a class="btn btn-outline-error rounded-1 ml-auto login" style="font-size: 1rem;" href="/login/">Login/Register</a>
+     
+                        {% endif %}
+
+                    </div>
+                </div>
+            </nav>
+            
+            <nav class="secondNavbar ">
+                <span class="hamburger-btn material-symbols-rounded">menu</span>
+                
+                    <h2 class="explore">Explore</h2>
+            
+                <ul class="links">
+                    <span class="close-btn material-symbols-rounded">close</span>
+
+                    <li ><a href="/mobile/"><span>
+                        <img src="{% static 'trackmate/images/phone.png' %}" style="width: 30px; height: 30px;" alt="Mobile Icon">
+                    </span>Mobile</a></li>
+
+                    <li><a href="/laptop/"><span>
+                        <img src="{% static 'trackmate/images/laptop.png' %}" style="width: 30px; height: 30px;" alt="Laptop Icon">
+                    </span>Laptop</a></li>
+
+                    <li><a href="/audio/"><span>
+                        <img src="{% static 'trackmate/images/headphones.png' %}" style="width: 30px; height: 30px;" alt="Audio Icon">
+                    </span>Audio</a></li>
+
+                    <li><a href="/books/"><span>
+                        <img src="{% static 'trackmate/images/books.png' %}" style="width: 30px; height: 30px;" alt="Book Icon">
+                    </span>Books</a></li>
+
+                    <li><a href="/clothes/"><span>
+                        <img src="{% static 'trackmate/images/jacket2.png' %}" style="width: 30px; height: 30px;" alt="Clothes icon">
+                    </span>Clothes</a></li>
+
+                    <li><a href="/petFood/"><span>
+                        <img src="{% static 'trackmate/images/petFood.png' %}" style="width: 30px; height: 30px;" alt="Pet Food Icon">
+                    </span>PetFood</a></li>
+
+                    <li><a href="/watches/"><span>
+                        <img src="{% static 'trackmate/images/watch.png' %}" style="width: 30px; height: 30px;" alt="Watch Icon">
+                    </span>Watches</a></li>
+
+                    <li><a href="/footwear/"><span>
+                        <img src="{% static 'trackmate/images/footwear.png' %}" style="width: 30px; height: 30px;" alt="Footwear Icon">
+                    </span>Footwear</a></li>
+
+                    <li style="margin-right: 3rem;"><a href="/camera/"><span>
+                        <img src="{% static 'trackmate/images/camera.png' %}" style="width: 30px; height: 30px;" alt="Camera Icon">
+                    </span>Camera</a></li>
+                </ul>
+            </nav>
+
+
+            {% block start %}
+
+            {% endblock %}
+        
+            <footer class="section footer-classic context-dark bg-image" style="background:black;">
+                <div class="container">
+                <div class="row row-30">
+                    <div class="col-md-4 col-xl-5">
+                    <div class="pr-xl-4"><img src="{% static 'trackmate/images/trackmate_logo.jpg' %}" alt="Logo" width="140px" height="130px" class="trackmate-logo">
+                        <p style="font-size:0.7rem;">Welcome to TrackMate, your go-to destination for intelligent and efficient price tracking. At TrackMate, we understand the value of your time and money. Our mission is to empower consumers like you with the tools and insights needed to make informed purchasing decisions.</p>
+                        <!-- Rights-->
+                        <p class="rights"><span>©  </span><span class="copyright-year">2023-24</span><span> </span><span>TrackMate</span><span>. </span><span>All Rights Reserved.</span></p>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <h5> <img src="{% static 'trackmate/images/contact.png' %}" alt="Contact icon" height="30" width="30"> <span style="font-weight: bolder;">Contacts</span></h5>
+                    <dl class="contact-list ml-5 mt-3">
+                        <dt><img src="{% static 'trackmate/images/address.png' %}" alt="Adress icon" height="25" width="25"><span class="ml-2">Address</span> </dt>
+                        <dd> <a href="https://www.google.com/maps/place/GLS+(Gujarat+Law+Society)+University/@23.0261076,72.5565389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e84f07cf71307:0x804503470ffe80ea!8m2!3d23.0261076!4d72.5591192!16s%2Fg%2F11f0_dllfr?entry=ttu" target="_blank">Netaji Rd, Opp.Law Garden, Ellisbridge, Ahmedabad, Gujarat 380006</a></dd>
+                    </dl>
+                    <dl class="contact-list ml-5">
+                        <dt><img src="{% static 'trackmate/images/mail.png' %}" alt="Email icon" height="22" width="25"><span class="ml-2">Email</span> </dt>
+                        <dd><a href="mailto:trackmate.official@gmail.com">trackmate.official@gmail.com</a></dd>
+                    </dl>
+                    <dl class="contact-list ml-5">
+                        <dt><img src="{% static 'trackmate/images/contactus.png' %}" alt="Phone icon" height="25" width="25"><span class="ml-2">Phone</span> </dt>
+                        <dd><a href="tel:1278484548">+91 1278484548</a> <span>or</span> <a href="tel:0792644 0532">079 2644 0532</a>
+                        </dd>
+                    </dl>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    <h5><img src="{% static 'trackmate/images/section.png' %}" alt="Section icon" height="30" width="30"><span style="font-weight: bolder;" class="ml-2">Section</span></h5>
+                    <ul class="nav-list ml-4 mt-2">
+                        <li class="mt-1"><a href="/homepage/"><img src="{% static 'trackmate/images/homepage.png' %}" alt="Contact icon" height="22" width="22"><span>Home</span> </a></li>
+                        <li class="mt-2"><a href="/about/"><img src="{% static 'trackmate/images/about-us.png' %}" alt="About Us icon" height="25" width="25"><span>About Us</span> </a></li>
+                        <li style="margin-left: 2px;" class="mt-1"><a href="/contact/"><img src="{% static 'trackmate/images/contact-us.png' %}" alt="Contact Us icon" height="22" width="22"> <span>Contact Us</span></a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="row no-gutters social-container">
+                <div class="col">
+                    <a class="social-inner facebook" href="https://www.facebook.com/">
+                        <span class="icon mdi mdi-facebook"></span>
+                        <img src="{% static 'trackmate/images/facebook.png' %}" alt="facebook" height="50px" width="50px">
+                        <span style="letter-spacing: 1px;" class="tooltip">Facebook</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="social-inner instagram" href="https://www.instagram.com/">
+                        <span class="icon mdi mdi-instagram"></span>
+                        <img src="{% static 'trackmate/images/instagram_round.png' %}" alt="instagram" height="45px" width="45px" >
+                        <span style="letter-spacing: 1px;" class="tooltip">Instagram</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="social-inner twitter" href="https://www.twitter.com/">
+                        <span class="icon mdi mdi-twitter"></span>
+                        <img src="{% static 'trackmate/images/twitter_x.png' %}" alt="twitter" height="55px" width="55px" style="position: relative; bottom: 0.2rem;">
+                        <span style="letter-spacing: 1.5px;" class="tooltip">Twitter</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="social-inner github" href="https://github.com/">
+                        <span class="icon mdi mdi-youtube-play"></span>
+                        <img src="{% static 'trackmate/images/github.png' %}" alt="github" height="50px" width="50px">
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+      
+<div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="budgetModalLabel">Set Budget</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form method="POST" enctype="multipart/form-data" action="{% url 'alertlist' %}">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                      <label for="budget" class="form-label">Enter Budget:</label>
+                      <input type="number" class="form-control" id="budget" name="product_budget" required>
+                  </div>
+                
+              <input type="hidden" id="budget_product_id" name="product_id">
+              <input type="hidden" id="budget_product_name" name="product_name">
+              <input type="hidden" id="budget_product_price" name="product_price">
+              <input type="hidden" id="budget_product_rating" name="product_rating">
+              <input type="hidden" id="budget_product_no_of_ratings" name="product_no_of_ratings">
+              <input type="hidden" id="budget_product_link" name="product_link">
+              <input type="hidden" id="budget_product_image" name="product_image">
+              <input type="hidden" id="budget_product_brand" name="product_brand">
+              <input type="hidden" id="budget_product_source" name="product_source">
+
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-success" id="submitBtn">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>       
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Product Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="largeImage" class="img-fluid" alt="Product Image">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="wishlistSuccessAlert" style="position: fixed; top: 10px; right: 35%; display: none; z-index: 10000;">
+        <strong>Success!🌟</strong> Product added to wishlist.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      <div class="alert alert-success alert-dismissible fade show" role="alert" id="budgetSuccessAlert" style="position: fixed; top: 10px; right: 35%; display: none;z-index: 10000;">
+        <strong>Your alert has been set successfully! 🚀</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal fade" id="logiRequiredForWishlist" tabindex="-1" role="dialog" aria-labelledby="customAlertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="customAlertModalLabel"> <strong>Login Required!</strong> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Please login to use wishlist functionality.
+            </div>
+            <div class="modal-footer">
+              <a href="/login" class="btn btn-primary">Login</a>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="logiRequiredForSetAlert" tabindex="-1" role="dialog" aria-labelledby="customAlertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="customAlertModalLabel"> <strong>Login Required!</strong> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Please login to use set alert functionality.
+            </div>
+            <div class="modal-footer">
+              <a href="/login" class="btn btn-primary">Login</a>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>      
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 30,
+                    density: {
+                        enable: true,
+                        value_area: 500
+                    }
+                },
+                color: {
+                    value: '#BB86FC'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: "3",
+                        color: '#BB86FC'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: 'img/github.svg',
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.8,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: true
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 20,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#BB86FC',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 10,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: true,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 800,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+    <script>
+        
+        var animations = [
+            'bounceIn',
+        ];
+
+        var animationIndex = 0;
+
+         function addAnimationsToCards(cards) {
+        cards.each(function () {
+          $(this).addClass('animated ' + animations[animationIndex % animations.length]);
+          animationIndex++;
+        });
+      }
+
+      // Function to check and add animations on scroll
+      function checkAnimations() {
+        var offset = $(window).scrollTop() + $(window).height();
+        var scrollPos = $(window).scrollTop();
+
+        var cards = $('.card:not(.animated)');
+        cards.each(function () {
+          var $card = $(this);
+          var isInViewport = $card.offset().top + $card.height() - 20 > scrollPos && $card.offset().top < offset;
+
+          if (isInViewport) {
+            $card.addClass('animated ' + animations[animationIndex % animations.length]);
+            animationIndex++;
+          }  else {
+                    // If element is out of viewport, remove animated class to reset the animation
+                    $animatable.removeClass('animated ' + $animatable.data('animation'));
+                }
+        });
+      }
+
+      // Initial animation assignment on page load
+      addAnimationsToCards($('.card:not(.animated)'));
+
+        // Trigger animations on scroll
+        $(window).on('scroll', function () {
+            checkAnimations();
+        });
+        
+
+        $(document).ready(function(){
+            console.log('JavaScript file loaded');
+            checkAnimations();
+         
+
+            // Defining the local dataset
+            var products = ['Laptop', 'Computer','Clothes', 'Sweatshirt ','Hoodies', 'Mobile', 'Tv','Smart', 'Macbook','Macbook Air','Macbook Pro','Charger' ,'Data cable','Socks','Pendrive' ,'For', 'Samsung', 'Apple', 'Realme', 'Shoes', 'audio', 'Books', 'Refrigerator', 'Dog Feed', 'Smart Watch', 'Camera','Pants', 'Jeans' , 'Jacket','T-shirt','Shirt','Iphone', 'Iphone 15','Iphone 14','Iphone 13','Iphone 15 pro','Iphone 15 pro max','Iphone 14','Iphone 14 pro','Iphone 14 pro max','Iphone 13','Iphone 13 pro','Iphone 13 pro max','Samsung Galaxy S24','Samsung Galaxy S24 Ultra'];
+            
+            // Constructing the suggestion engine
+            var products = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: products
+            });
+
+            var links = document.querySelectorAll('.links li');
+
+links.forEach(function(link) {
+    link.addEventListener('mouseenter', function() {
+        var img = this.querySelector('img');
+        img.src = img.src.replace('.png', '_purple.png');
+        this.querySelector('span').style.color = '#bb86fc';
+    });
+
+    link.addEventListener('mouseleave', function() {
+        var img = this.querySelector('img');
+        img.src = img.src.replace('_purple.png', '.png');
+        this.querySelector('span').style.color = '';
+    });
+});
+            
+            // Initializing the typeahead
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true, /* Enable substring highlighting */
+                minLength: 1 /* Specify minimum characters required for showing result */
+            },
+            {
+                name: 'products',
+                source: products
+            });
+
+    $(document).on('click', '[data-target="#imageModal"]', function (e) {
+            e.preventDefault();
+            const largeImage = $(this).data('large-image');
+            $('#largeImage').attr('src', largeImage);
+            $('#imageModal').modal('show');
+    });
+
+    // Function to reset the form fields in the "Wishlist" form
+    function resetWishlistForm() {
+        $('#wishlistBtn').closest('form')[0].reset();  // Reset the form
+        $('#product_id').val('');
+        $('#product_name').val('');
+        $('#product_price').val('');
+        $('#product_rating').val('');
+        $('#product_no_of_ratings').val('');
+        $('#product_link').val('');
+        $('#product_image').val('');
+        $('#product_brand').val('');
+        $('#product_source').val('');
+    }
+
+    const submitBtn = document.getElementById("submitBtn");
+    if (submitBtn) {
+        submitBtn.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const form = $(this).closest('form');
+            const formData = new FormData(form[0]);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    // Handle success response if needed
+                    console.log('Success:', data);
+
+                    $('#budgetSuccessAlert').fadeIn('slow', function () {
+                        $(this).delay(3000).fadeOut('slow');
+                    });
+
+                    // Close the modal after submission
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    $('#budgetModal').removeClass('show');
+                    $('body').css('padding-right', '0');  // Reset body padding added by modal-open class
+                    $('#budgetModal').css('display', 'none');
+
+                    // Reset the form fields when the modal is closed
+                    // resetBudgetModal();
+                },
+                error: function (error) {
+                    // Handle error response if needed
+                    console.error('Error:', error);
+                }
+            });
+        });
+    }
+
+
+
+// Click event handler for the "Set Alert" button
+$('.alert-now-btn').click(function () {
+    console.log('Set Alert button clicked!');
+    
+        const productId = $(this).data('product-id');
+        const productName = $(this).data('product-name');
+        const productPrice = $(this).data('product-price');
+        const productRating = $(this).data('product-rating');
+        const productNoOfRatings = $(this).data('product-no-of-ratings');
+        const productLink = $(this).data('product-link');
+        const productImage = $(this).data('product-image');
+        const productBrand = $(this).data('product-brand');
+        const productSource = $(this).data('product-source');
+
+        console.log('Product ID:', productId);
+        console.log('Product Name:', productName);
+        console.log('Product Price:', productPrice);
+        console.log('Product Rating:', productRating);
+        console.log('Product No Of Ratings:', productNoOfRatings);
+        console.log('Product Link:', productLink);
+        console.log('Product Image:', productImage);
+        console.log('Product Brand:', productBrand);
+        console.log('Product Source:', productSource);
+
+        $('#budget_product_id').val(productId);
+        $('#budget_product_name').val(productName);
+        $('#budget_product_price').val(productPrice);
+        $('#budget_product_rating').val(productRating);
+        $('#budget_product_no_of_ratings').val(productNoOfRatings);
+        $('#budget_product_link').val(productLink);
+        $('#budget_product_image').val(productImage);
+        $('#budget_product_brand').val(productBrand);
+        $('#budget_product_source').val(productSource);
+
+    // Check if the user is authenticated
+    $.ajax({
+        type: 'GET',
+        url: '/check_authentication/',
+        success: function (data) {
+            console.log(data);
+            if (data.authenticated) {
+                // User is authenticated, proceed with opening the budget modal
+                $('#budgetModal').modal('show');
+            }  else {
+                // User is not authenticated and login modal has not been shown yet
+                window.location.href = '/login';
+            }
+        },
+        error: function (error) {
+            // Handle error response if needed
+            console.error('Error:', error);
+        }
+    });
+});
+
+
+// Function to open the budget modal
+function openBudgetModal() {
+    const productId = $(this).data('product-id');
+    const productName = $(this).data('product-name');
+    const productPrice = $(this).data('product-price');
+    const productRating = $(this).data('product-rating');
+    const productNoOfRatings = $(this).data('product-no-of-ratings');
+    const productLink = $(this).data('product-link');
+    const productImage = $(this).data('product-image');
+    const productBrand = $(this).data('product-brand');
+    const productSource = $(this).data('product-source');
+
+    console.log('Product ID:', productId);
+    console.log('Product Name:', productName);
+    console.log('Product Price:', productPrice);
+    console.log('Product Rating:', productRating);
+    console.log('Product No Of Ratings:', productNoOfRatings);
+    console.log('Product Link:', productLink);
+    console.log('Product Image:', productImage);
+    console.log('Product Brand:', productBrand);
+    console.log('Product Source:', productSource);
+
+    $('#budget_product_id').val(productId);
+    $('#budget_product_name').val(productName);
+    $('#budget_product_price').val(productPrice);
+    $('#budget_product_rating').val(productRating);
+    $('#budget_product_no_of_ratings').val(productNoOfRatings);
+    $('#budget_product_link').val(productLink);
+    $('#budget_product_image').val(productImage);
+    $('#budget_product_brand').val(productBrand);
+    $('#budget_product_source').val(productSource);
+
+    // Open the budget modal
+    $('#budgetModal').modal('show');
+
+    // Reset the form fields when the modal is opened
+    // resetBudgetModal();
+}
+$(document).on('click', '.addToWishlist', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Store reference to the button that was clicked
+    var button = $(this);
+
+    // Check if the user is authenticated
+    $.ajax({
+        type: 'GET',
+        url: '/check_authentication/',
+        success: function (data) {
+            if (data.authenticated) {
+                // User is authenticated, proceed with the AJAX request
+                const form = button.closest('form'); // Use the stored button reference
+                const formData = new FormData(form[0]);
+
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        // Handle success response if needed
+                        console.log('Success:', data);
+
+                        $('#wishlistSuccessAlert').fadeIn('slow', function () {
+                            $(this).delay(3000).fadeOut('slow');
+                        });
+
+                        // Reset the form fields when the form is submitted
+                        resetWishlistForm();
+                    },
+                    error: function (error) {
+                        // Handle error response if needed
+                        console.error('Error:', error);
+                    }
+                });
+            } else {
+                // User is not authenticated
+                window.location.href = '/login';
+            }
+        },
+        error: function (error) {
+            // Handle error response if needed
+            console.error('Error:', error);
+        }
+    });
+});
+
+var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+
+ 
+      
+    // Load more
+     $('.product-column .mb-4:gt(9)').hide();
+
+      // Load more button click event
+      $('#loadMoreBtn').click(function () {
+        // Add animations to newly loaded cards
+        addAnimationsToCards($('.product-column .mb-4:hidden:lt(10)'));
+
+        // Show the next 10 products
+        $('.product-column .mb-4:hidden:lt(10)').show();
+
+        // If no hidden products remain, hide the "Load More" button
+        if ($('.product-column .mb-4:hidden').length === 0) {
+          $('#loadMoreBtn').hide();
+        }
+      });
+
+
+        }); 
+        const navbarMenu = document.querySelector(".secondNavbar .links");
+        const hamburgerBtn = document.querySelector(".hamburger-btn");
+        const hideMenuBtn = navbarMenu.querySelector(".close-btn");
+        const formPopup = document.querySelector(".form-popup");
+        const hidePopupBtn = formPopup.querySelector(".close-btn");
+
+        // Show mobile menu
+        hamburgerBtn.addEventListener("click", () => {
+            navbarMenu.classList.toggle("show-menu");
+        });
+
+        // Hide mobile menu
+        hideMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+
+        </script>  
+    </body>
+    </html>
+
+    </body>
+    </html>

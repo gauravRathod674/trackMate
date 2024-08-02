@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block start %}
+
+  <div class="row">
+    <!-- First Column: Site Container -->
+    <div class="site-column">
+        <div class="site-container">
+          <div class="site-label">Sites</div>
+              <form action="{% url 'clothes' %}" enctype="multipart/form-data" method="POST">
+                  {% csrf_token %}
+                  <div class="d-flex flex-wrap">
+                    <div class="custom-checkbox">
+                      <input class="form-check-input" type="checkbox" name="site" value="amazon" id="amazonCheckbox">
+                      <label class="form-check-label" for="amazonCheckbox">Amazon</label>
+                    </div>
+            
+                    <div class="custom-checkbox">
+                      <input class="form-check-input" type="checkbox" name="site" value="flipkart" id="flipkartCheckbox">
+                      <label class="form-check-label" for="flipkartCheckbox">Flipkart</label>
+                    </div>
+            
+                    <div class="custom-checkbox">
+                      <input class="form-check-input" type="checkbox" name="site" value="H&M" id="hmCheckbox">
+                      <label class="form-check-label" for="hmCheckbox">H&M</label>
+                    </div>
+            
+                    <div class="custom-checkbox">
+                      <input class="form-check-input" type="checkbox" name="site" value="westside" id="westsideCheckbox">
+                      <label class="form-check-label" for="westsideCheckbox">Westside</label>
+                    </div>
+            
+                    <div class="custom-checkbox">
+                      <input class="form-check-input" type="checkbox" name="site" value="skechers" id="skechersCheckbox">
+                      <label class="form-check-label" for="skechersCheckbox">Skechers</label>
+                    </div>
+  
+                    <div class="custom-checkbox">
+                      <button type="submit" class="btn btn-success applyBtn" style="width: 90%; border-radius: 10px;margin-left: 20px;">Apply</button>
+                    </div>
+                  </div>
+              </form>
+        </div>
+      </div>
+
+    <!-- Second Column: Product Details Container -->
+    <div class="product-column">
+      <div class="container" id="blur">
+        {% for product in products %}
+        <div class="mb-4">
+          <div class="card text-white">
+            <div class="row g-0">
+              <!-- Column 1: Site Logo -->
+              <div class="col-md-1 d-flex align-items-start">
+                {% if product.source == 'AMAZON' %}
+                <img src="{% static 'trackmate/images/amazon_logo.png' %}" alt="Amazon logo" width="50px" height="50px" style="position: relative;top: 0.5rem;left: 1.8rem;">
+                {% elif product.source == 'FLIPKART' %}
+                <img src="{% static 'trackmate/images/flipkart_logo.png' %}" alt="Flipkart logo" width="75px" height="75px" style="position: relative; left: 0.7rem;">
+                {% elif product.source == 'H&M' %}
+                <img src="{% static 'trackmate/images/H&M-Logo.png' %}" alt="H&M logo" width="50px" height="50px" style="position: relative; left: 2rem;">
+                {% elif product.source == 'WESTSIDE' %}
+                <img src="{% static 'trackmate/images/westside.jpg' %}" alt="Westside logo" width="100px" height="100px" style="position: relative; left: 0.8rem;">
+                {% elif product.source == 'SKECHERS' %}
+                <img src="{% static 'trackmate/images/skechers.jpg' %}" alt="Skechers logo" width="100px" height="100px">
+                {% endif %}
+              </div>
+              <!-- Column 2: Product Image -->
+              <div class="col-md-2 d-flex align-items-center justify-content-center pl-4 ">
+                <a href="#" data-toggle="modal" data-target="#imageModal" data-large-image="{{ product.image }}">
+                  <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}" height="500px" width="500px">
+                </a>
+              </div>
+              <!-- Column 3: Product Details -->
+              <div class="col-md-6">
+                <div class="card-body d-flex flex-column">
+                  {% if product.brand != 'N/A' and product.brand %}
+                  <p class="card-text">Brand: {{ product.brand }}</p>
+                  {% endif %}
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text" style="font-weight: bolder; font-size: 2rem;">{{ product.price }}</p>
+                  <!-- Display Rating as Stars -->
+                  {% if product.ratings != 'N/A' and product.ratings %}
+                  <p class="card-text">
+                    {% with product.ratings|star_rating as stars %}
+                      {% for star in stars.full_stars %}
+                        <img src="{% static 'trackmate/images/full-star.png' %}" alt="Full Star" width="25px" height="25px">
+                      {% endfor %}
+
+                    {% if stars.half_stars %}
+                      <img src="{% static 'trackmate/images/half-star.png' %}" alt="Half Star" width="25px" height="25px">
+                    {% endif %}
+
+                    {% for star in stars.empty_stars %}
+                      <img src="{% static 'trackmate/images/empty-star.png' %}" alt="Empty Star" width="25px" height="25px">
+                    {% endfor %}
+
+                    {% endwith %}
+                    
+                    {% if product.no_of_ratings != 'N/A' and product.no_of_ratings %}
+                      {{ product.no_of_ratings }}
+                    {% endif %}
+                  </p>
+                  {% endif %}
+
+                </div>
+              </div>
+              <!-- Column 4: Buy Now, Set Alert, Wishlist Buttons -->
+              <div class="col-md-3 mt-3 buttons-div">
+                <div class="button-container buy-now-div">
+                  <a href="{{ product.link }}" class="buy-now-btn" target="_blank">
+                    <img src="{% static 'trackmate/images/buy-now.png' %}" alt="Skechers logo" width="30px" height="30px">
+                    Buy Now
+                  </a>
+                </div>
+                <div class="button-container set-alert-div">
+                  <button class="alert-now-btn show-modal" data-toggle="modal" data-target="#budgetModal" data-product-id="{{ product.id }}" data-product-name="{{ product.name }}" data-product-price="{{ product.price }}" data-product-rating="{{ product.ratings }}" data-product-no-of-ratings="{{ product.no_of_ratings }}" data-product-link="{{ product.link }}" data-product-image="{{ product.image }}" data-product-brand="{{ product.brand }}" data-product-source="{{ product.source }}">
+                    <img src="{% static 'trackmate/images/bell-after.png' %}" alt="Skechers logo" width="30px" height="30px">
+                    Set Alert
+                  </button>
+                </div>
+                <div class="button-container wishlist-div">
+                  <form method="POST" enctype="multipart/form-data" action="{% url 'wishlist' %}">
+                    {% csrf_token %}
+                    <!-- Hidden input fields for capturing product details -->
+                    <input type="hidden" id="product_id" name="product_id" value="{{ product.id }}">
+                    <input type="hidden" id="product_name" name="product_name" value="{{ product.name }}">
+                    <input type="hidden" id="product_price" name="product_price" value="{{ product.price }}">
+                    <input type="hidden" id="product_rating" name="product_rating" value="{{ product.ratings }}">
+                    <input type="hidden" id="product_no_of_ratings" name="product_no_of_ratings" value="{{ product.no_of_ratings }}">
+                    <input type="hidden" id="product_link" name="product_link" value="{{ product.link }}">
+                    <input type="hidden" id="product_image" name="product_image" value="{{ product.image }}">
+                    <input type="hidden" id="product_brand" name="product_brand" value="{{ product.brand }}">
+                    <input type="hidden" id="product_source" name="product_source" value="{{ product.source }}">
+                    <button type="submit" class="btn btn-success addToWishlist" id="wishlistBtn">
+                      <img src="{% static 'trackmate/images/bookmark-after.png' %}" alt="Skechers logo" width="30px" height="30px">
+                      Wishlist
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+      <div class="load-more-container mt-4">
+        <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+      </div>
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+{% endblock %}

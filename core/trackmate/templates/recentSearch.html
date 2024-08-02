@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block start %}
+<style>
+   h1 {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+        background: linear-gradient(180deg,indigo,#bb86fc,violet);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .list-group {
+        box-shadow: 0 0 30px #bb86fc;
+    }
+
+    .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        border: 4px solid transparent; 
+        transition: border-color 0.3s ease; 
+    }
+    
+    .list-group-item a {
+        color: #fff;
+        width: 93%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .list-group-item:hover {
+        border: 2px solid #bb86fc;
+    }
+
+    .list-group-item .btn {
+        width: 7%;
+    }
+
+    .close-img:hover {
+        background-color: #fff;
+    }
+</style>
+
+<div class="container w-50" style="margin-top: 8.5rem;">
+    <h1>Recent Search</h1>
+
+    <div class="list-group mt-4">
+        {% for search in recentSearch %}
+            <div class="list-group-item" data-product-name="{{ search.productName }}">
+                <a href="/Search/{{search.productName}}/" class="text-decoration-none" style="position: relative; left: 0;">
+                    {{ search.productName }}
+                </a>
+                <a href="/deleteRecentSearchProduct/{{search.id}}/" class="btn btn-light btn-sm float-end close-img">
+                    <img src="{% static 'trackmate/images/close.png' %}" height="20" width="20" alt="Close">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if recentSearch %}
+        <div class="text-center">
+            <a href="/clearHistory/" class="btn btn-danger mt-3">Clear History</a>
+        </div>
+    {% else %}
+        <p class="mt-3" style=" text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(180deg,indigo,#bb86fc,violet);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; ">No recent searches found.</p>
+    {% endif %}
+</div>
+{% endblock %}

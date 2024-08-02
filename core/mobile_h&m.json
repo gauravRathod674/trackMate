@@ -1,0 +1,37 @@
+{
+  "timestamp": 1706441612,
+  "data": [
+    {
+      "brand": "H&M",
+      "name": "Metal mobile",
+      "price": "Rs.1,299.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/49/f5/49f59b47258c66ff876b1af220869a01fb4d4480.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1206789002.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Christmas mobile",
+      "price": "Rs.1,499.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/56/32/5632e4a5bf4e18bf7726e3e2220c712888d4a057.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1102508001.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Beaded phone bag",
+      "price": "Rs.1,499.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/fd/42/fd4256e3000b42fff79ec85492463b029d802ef8.jpg],origin[dam],category[ladies_accessories_bags],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1182167004.html"
+    },
+    {
+      "brand": "H&M",
+      "name": "Mobile phone decoration",
+      "price": "Rs.399.00",
+      "image": "//lp2.hm.com/hmgoepprod?set=source[/5d/68/5d681f56cb400945d6b63dfcdde4c936ed4d1137.jpg],origin[dam],category[ladies_accessories_mobileaccessories],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+      "source": "H&M",
+      "link": "https://www2.hm.com/en_in/productpage.1042480005.html"
+    }
+  ]
+}

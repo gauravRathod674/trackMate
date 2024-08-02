@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Your Banner Page</title>
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden; /* Hide the horizontal scrollbar */
+        }
+
+        #bannerCarousel {
+            width: 100vw; /* Set the width of the carousel to the full viewport width */
+            height: 100vh; /* Set the height of the carousel items */
+            overflow: hidden; /* Hide the vertical scrollbar */
+        }
+
+        .carousel-inner {
+            width: 100%; /* Set the width of the carousel items */
+            height: 100vh; /* Set the height of the carousel items */
+        }
+
+        .carousel-item {
+            text-align: center; /* Center the content inside the carousel item */
+        }
+
+        .carousel-item img {
+            width: 100vw; /* Set the width of the image to the full viewport width */
+            height: 100vh; /* Set the height of the image */
+            object-fit: cover; /* Cover the entire carousel item with the image */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid p-0">
+    <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for banner in banners %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <a href="{{ banner.href }}">
+                        <img src="{{ banner.img_src }}" class="d-block w-100" alt="Banner Image">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

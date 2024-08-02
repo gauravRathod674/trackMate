@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+        background-color: black;
+        color: hsl(0, 0%, 20%);
+        /* font-family: 'Raleway', sans-serif; */
+        /* font-family: 'Poppins', sans-serif; */
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .about-us-section {
+        padding: 50px 0;
+        position: relative;
+        z-index: 2; /* Ensure the about-us-section appears above particles */
+    }
+
+    .logo-container {
+        text-align: left;
+        margin-bottom: 30px;
+        position: absolute;
+        top: 65%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+    }
+
+    .logo img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: contain;  /* Updated property to contain the entire image */
+        border: 6px solid #ffffff;
+        box-shadow: 0 0 20px #ffffff;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .logo img:hover {
+        transform: scale(1.2);
+    }
+
+    .about-us-container {
+        background:  rgba(0, 0, 0, 0.2);
+        color: black;
+        font-weight: bolder;
+        border-radius: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        position: relative;
+        top: 20%;
+        left: 30%;
+        overflow: hidden;
+        opacity: 0.8;
+        box-shadow: 0 0 40px #bb86fc;
+        transition: transform 0.5s ease-in-out;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .about-us-container:hover {
+        transform: scale(1.1);
+    }
+
+    h2 {
+        color: #ffffff;
+        margin-top: 20px;
+    }
+
+    h5 {
+        margin-bottom: 20px;
+        text-align: justify;
+        color: #fff;
+    }
+
+    /* Added some custom styles for a more polished appearance */
+    .container {
+        max-width: 800px;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .aboutuss{
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-8 {
+        order: -1; /* Shifts the order to the left */
+    }
+
+    /* Updated particle animation */
+  
+    footer {
+        margin-top: 14rem;
+        z-index: 2; /* Ensure the footer appears above particles */
+    }
+</style>
+
+<section class="about-us-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="about-us-container">
+                    <h2 class="mb-4 mt-3 aboutuss">About Us</h2>
+                    <h5>Welcome to TrackMate, your go-to destination for intelligent and efficient price tracking. At TrackMate, we understand the value of your time and money. Our mission is to empower consumers like you with the tools and insights needed to make informed purchasing decisions.</h5>
+                    <h5>In the vast landscape of e-commerce, finding the best deals can be like searching for a needle in a haystack. That's where TrackMate comes in. Imagine having a reliable assistant that tirelessly monitors prices, alerts you to the best discounts, and ensures you never miss a great deal. That's precisely what TrackMate offers.</h5>
+                    <h5>Our cutting-edge technology continuously scans the vast expanse of the internet, tracking prices across various e-commerce platforms. Whether you're on the hunt for the latest gadgets, trendy fashion, home essentials, or anything in between, TrackMate has you covered.</h5>
+                    <h5>Navigating our user-friendly platform is a breeze. Simply enter the product name, and let TrackMate do the rest. Our intelligent algorithms analyze price trends, historical data, and current discounts, presenting you with a comprehensive overview of the best deals available.</h5>
+                </div>
+            </div>
+            <div class="col-md-4 logo-container">
+                <div class="logo">
+                    <img src="{% static 'trackmate/images/trackmate_logo.jpg' %}" alt="Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add these script tags to your HTML -->
+<script src="https://unpkg.com/scrollmagic@2.0.8/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="https://unpkg.com/scrollmagic@2.0.8/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+<script>
+
+    // Init ScrollMagic
+    var controller = new ScrollMagic.Controller();
+
+    // Add GSAP timeline for scroll animations
+    var timeline = gsap.timeline();
+
+    timeline.from('.about-us-container h5', {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "power3.inOut"
+    });
+
+    // Create a scene for the trigger and animation
+    var scene = new ScrollMagic.Scene({
+        triggerElement: 'h5',
+        reverse: false // Change to true if you want the animation to reverse on scrolling up
+    })
+    .setTween(timeline)
+    .addTo(controller);
+
+
+   
+</script>
+{% endblock %}

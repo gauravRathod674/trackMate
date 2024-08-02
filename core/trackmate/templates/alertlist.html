@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block start %}
+<div class="container" id="blur">
+    {% for product in alertlist %}
+    <div class="mb-4">
+      <div class="card text-white">
+        <div class="row g-0">
+          <!-- Column 1: Site Logo -->
+          <div class="col-md-1 d-flex align-items-start">
+            {% if product.source == 'AMAZON' %}
+                <img src="{% static 'trackmate/images/amazon_logo.png' %}" alt="Amazon logo" width="50px" height="50px" style="position: relative;top: 0.5rem;left: 1.8rem;">
+            {% elif product.source == 'FLIPKART' %}
+                <img src="{% static 'trackmate/images/flipkart_logo.png' %}" alt="Flipkart logo" width="75px" height="75px" style="position: relative; left: 0.7rem;">
+            {% elif product.source == 'H&M' %}
+                <img src="{% static 'trackmate/images/H&M-Logo.png' %}" alt="H&M logo" width="50px" height="50px" style="position: relative; left: 2rem;">
+            {% elif product.source == 'WESTSIDE' %}
+                <img src="{% static 'trackmate/images/westside.jpg' %}" alt="Westside logo" width="100px" height="100px" style="position: relative; left: 0.8rem;">
+            {% elif product.source == 'SKECHERS' %}
+                <img src="{% static 'trackmate/images/skechers.jpg' %}" alt="Skechers logo" width="100px" height="100px">
+            {% endif %}
+          </div>
+          <!-- Column 2: Product Image -->
+          <div class="col-md-2 d-flex align-items-center justify-content-center pl-4 ">
+            <a href="#" data-toggle="modal" data-target="#imageModal" data-large-image="{{ product.image }}">
+              <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}" height="500px" width="500px">              </a>
+          </div>
+          <!-- Column 3: Product Details -->
+          <div class="col-md-6">
+            <div class="card-body d-flex flex-column">
+              {% if product.brand != 'N/A' and product.brand %}
+                <p class="card-text">Brand: {{ product.brand }}</p>
+              {% endif %}
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text" style="font-weight: bolder; font-size: 2rem;">{{ product.price }}</p>
+              <!-- Display Rating as Stars -->
+              {% if product.ratings != 'N/A' and product.ratings %}
+                  <p class="card-text">
+                    {% with product.ratings|star_rating as stars %}
+                      {% for star in stars.full_stars %}
+                        <img src="{% static 'trackmate/images/full-star.png' %}" alt="Full Star" width="25px" height="25px">
+                      {% endfor %}
+
+                    {% if stars.half_stars %}
+                      <img src="{% static 'trackmate/images/half-star.png' %}" alt="Half Star" width="25px" height="25px">
+                    {% endif %}
+
+                    {% for star in stars.empty_stars %}
+                      <img src="{% static 'trackmate/images/empty-star.png' %}" alt="Empty Star" width="25px" height="25px">
+                    {% endfor %}
+
+                    {% endwith %}
+                    
+                    {% if product.no_of_ratings != 'N/A' and product.no_of_ratings %}
+                      {{ product.no_of_ratings }}
+                    {% endif %}
+                  </p>
+                  {% endif %}
+              <h4  style="color: #fff;font-weight: 900 ;">Budget: ₹{{product.budget}}</h4>
+            </div>
+          </div>
+          <!-- Column 4: Buy Now, Set Alert, Wishlist Buttons -->
+          <div class="col-md-3 mt-3 buttons-div">
+            <div class="button-container buy-now-div">
+              <a href="{{ product.link }}" class="buy-now-btn" target="_blank">
+                <img src="{% static 'trackmate/images/buy-now.png' %}" alt="Skechers logo" width="30px" height="30px">
+                Buy Now
+              </a>
+            </div>
+            <div class="button-container set-alert-div">
+                <form action="{% url 'removeItemFromAlert' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="btn btn-danger remove-button">
+                        <img src="{% static 'trackmate/images/remove.png' %}" alt="Remove" width="28px" height="28px" class="mb-1" class="remove-img">Remove</button>
+                </form>
+            </div>
+            <div class="button-container wishlist-div">
+              <form method="POST" enctype="multipart/form-data" action="{% url 'wishlist' %}">
+                {% csrf_token %}
+                <!-- Hidden input fields for capturing product details -->
+                <input type="hidden" id="product_id" name="product_id" value="{{ product.id }}">
+                <input type="hidden" id="product_name" name="product_name" value="{{ product.name }}">
+                <input type="hidden" id="product_price" name="product_price" value="{{ product.price }}">
+                <input type="hidden" id="product_rating" name="product_rating" value="{{ product.ratings }}">
+                <input type="hidden" id="product_no_of_ratings" name="product_no_of_ratings" value="{{ product.no_of_ratings }}">
+                <input type="hidden" id="product_link" name="product_link" value="{{ product.link }}">
+                <input type="hidden" id="product_image" name="product_image" value="{{ product.image }}">
+                <input type="hidden" id="product_brand" name="product_brand" value="{{ product.brand }}">
+                <input type="hidden" id="product_source" name="product_source" value="{{ product.source }}">
+                <button type="submit" class="btn btn-success addToWishlist" id="wishlistBtn">
+                  <img src="{% static 'trackmate/images/bookmark-after.png' %}" alt="Skechers logo" width="30px" height="30px">
+                  Wishlist
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function () {
+    console.log('JavaScript file loaded');
+
+    $('.remove-button').on('click', function (e) {
+        e.preventDefault();  // Prevent the default form submission
+
+        // Log a message to the console to check if the click event is captured
+        console.log('Remove button clicked');
+
+        // Get the form element
+        var form = $(this).closest('form');
+
+        // Get the form action URL
+        var url = form.attr('action');
+
+        // Get the product ID from the hidden input
+        var product_id = form.find('input[name="product_id"]').val();
+
+        // Get the CSRF token
+        var csrftoken = $('input[name="csrfmiddlewaretoken"]').val();
+
+        // Send an AJAX request to the removeItem view with CSRF token
+        $.ajax({
+            type: 'POST',
+            url: url,
+            headers: {
+                'X-CSRFToken': csrftoken
+            },
+            data: { 'product_id': product_id },
+            success: function (data) {
+                // Update the wishlist content with the updated data
+                $('.container#blur').html(data);
+
+                location.reload();
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error('Error removing item:', errorThrown);
+            }
+        });
+    });
+});
+
+
+</script>
+
+{% endblock %}

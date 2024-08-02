@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'trackmate/css/style.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>                  
+        .login:hover {
+            color: #28A745;
+        }
+
+        .login:active {
+            color: #28A745;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-black p-0 small firstnavbar" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/homepage/">
+                <img src="{% static 'trackmate/images/logo.jpg' %}" height="30px" alt="Logo" class="mr-2">
+            </a>
+            <a class="navbar-brand" href="#">
+                <!-- <img src="{% static 'trackmate/images/quick-search.svg' %}" alt="Logo" class="mr-2"> -->
+            </a>
+            <form class="d-flex  w-50" role="search" method="POST" action="{% url 'search' %}"  enctype="multipart/form-data">
+                {% csrf_token %}
+                <input class="form-control me-2 rounded-3 flex-grow-1 p-1" type="search" placeholder="Enter Product Name" aria-label="Search" style="font-size: 0.8rem; letter-spacing: 1.5px;" name="product_name">
+                <input type="submit" class="btn btn-outline-success rounded-5" style="font-size: 0.8rem;" value="Search"></input>
+                <a class="btn btn-outline-error rounded-1 ml-auto login" style="font-size: 0.8rem;" href="/login/">Login/Register</a>
+            </form>
+        </div>
+    </nav>
+
+
+    <nav class="navbar navbar-expand-lg sec-nav-product p-0 small secondnavbar" data-bs-theme="dark" id="navbarNav">
+        <div class="container-fluid">
+            <span class="navbar-brand">Explore</span>
+
+            <!-- Navbar Toggler Button -->
+            
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" >
+                <div class="navbar-nav">
+                    <!-- Mobile -->
+                    <a class="nav-link d-flex align-items-center mobile" href="/mobile/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/phone.png' %}" width="100%" alt="Mobile">
+                        </span>
+                        <span class="category p-1 ">Mobile</span> 
+                    </a>
+
+                    <!-- Computers -->
+                    <a class="nav-link d-flex align-items-center laptop" href="/laptop/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/laptop.png' %}" width="100%" alt="Computers">
+                        </span>
+                        <span class="category ">Computers</span>
+                    </a>
+
+                    <!-- Audio -->
+                    <a class="nav-link d-flex align-items-center headphones" href="/headphones/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/headphones.png' %}" width="100%" alt="Audio">
+                        </span>
+                        <span class="category ">Audio</span> 
+                    </a>
+
+                    <!-- Books -->
+                    <a class="nav-link d-flex align-items-center books" href="/books/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/books.png' %}" width="100%" alt="Books">
+                        </span>
+                        <span class="category ">Books</span> 
+                    </a>
+
+                    <!-- Home -->
+                    <a class="nav-link d-flex align-items-center home" href="/home/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/home.png' %}" width="100%" alt="Home">
+                        </span>
+                        <span class="category ">Home</span> 
+                    </a>
+
+                    <!-- Clothes -->
+                    <a class="nav-link d-flex align-items-center clothes" href="/clothes/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/clothes.png' %}" width="100%" alt="Clothing">
+                        </span>
+                        <span class="category ">Clothes</span> 
+                    </a>
+
+                    <!-- Watches -->
+                    <a class="nav-link d-flex align-items-center watch" href="/watches/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/watch.png' %}" width="100%" alt="Watches">
+                        </span>
+                        <span class="category ">Watches</span> 
+                    </a>
+
+                    <!-- Footwear -->
+                    <a class="nav-link d-flex align-items-center footwear" href="/footwear/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/footwear.png' %}" width="100%" alt="Footwear">
+                        </span>
+                        <span class="category ">Footwear</span> 
+                    </a>
+
+                    <!-- Camera -->
+                    <a class="nav-link d-flex align-items-center camera" href="/camera/">
+                        <span class="overflow-hidden me-2" style="width: 30px; height: 30px;">
+                            <img src="{% static 'trackmate/images/camera.png' %}" width="100%" alt="Camera">
+                        </span>
+                        <span class="category ">Camera</span> 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block start %}
+
+    {% endblock %}
+    <footer class="section footer-classic context-dark bg-image" style="background:black;">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><img src="{% static 'trackmate/images/logo.jpg' %}" alt="Logo" width="140" height="50">
+                <p style="font-size:0.7rem;">Welcome to TrackMate, your go-to destination for intelligent and efficient price tracking. At TrackMate, we understand the value of your time and money. Our mission is to empower consumers like you with the tools and insights needed to make informed purchasing decisions.</p>
+                <!-- Rights-->
+                <p class="rights"><span>©  </span><span class="copyright-year">2023-24</span><span> </span><span>TrackMate</span><span>. </span><span>All Rights Reserved.</span></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Contacts</h5>
+              <dl class="contact-list">
+                <dt>Address:</dt>
+                <dd> Netaji Rd, Opp.Law Garden, Ellisbridge, Ahmedabad, Gujarat 380006</dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>email:</dt>
+                <dd><a href="mailto:#">trackmate.official@gmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>phones:</dt>
+                <dd><a href="tel:#">7984433333</a> <span>or</span> <a href="tel:#">27551230</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Links</h5>
+              <ul class="nav-list">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contacts</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters social-container">
+          <div class="col"><a class="social-inner" href="https://www.facebook.com/"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+          <div class="col"><a class="social-inner" href="https://www.instagram.com/"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+          <div class="col"><a class="social-inner" href="https://www.twitter.com/"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+          <div class="col"><a class="social-inner" href="https://www.google.com/"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+      </footer>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
